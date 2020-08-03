@@ -43,4 +43,4 @@ last_modified_at: 2020-08-03T
 | Shift + PageDown | 아래 페이지 이동 |  
   
   
-reference :<http://rcasio80.blogspot.com/2015/02/blog-post.htm>
+<http://rcasio80.blogspot.com/2015/02/blog-post.htm>
