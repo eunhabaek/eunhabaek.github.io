@@ -1,10 +1,12 @@
 ---
 title:  "Linux 단축키"
 excerpt: "Linux를 사용할 떄 편리한 기본적인 단축키를 알아보자."
+
 categories:
   - Linux
 tags:
   - Basic
+last_modified_at: 2020-08-03T11:35:00-36:00
 ---
   
 리눅스 터미널을 사용할 때 편리한 단축키를 간단하게 정리 해 보았다. 
