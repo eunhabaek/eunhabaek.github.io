@@ -6,6 +6,10 @@ categories:
 tags:
   - Basic
 ---
+  
+리눅스 터미널을 사용할 때 편리한 단축키를 간단하게 정리 해 보았다. 
+  
+  
 | 단축키 | 설명 |
 |:---:|:----:|
 | Ctrl + C | 실행 중인 프로그램 중지 |    
@@ -33,4 +37,7 @@ tags:
 | Ctrl + Shift + Q | 현재 터미널을 종료 |
 | Ctrl + Shift + F | 터미널내에 문자열검색 | 
 | Shift + PageUp | 상위 페이지 이동 |
-| Shift + PageDown | 아래 페이지 이동 | 
+| Shift + PageDown | 아래 페이지 이동 |  
+  
+  
+reference :<http://rcasio80.blogspot.com/2015/02/blog-post.htm>
