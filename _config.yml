@@ -97,10 +97,10 @@ author:
   avatar           : "/assets/poodle.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "**Go get'em!**"
   location         : "South Korea"
+  email	           : "beh2549@gmail.com"
   links:
     - label: "beh2549@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
-      url: "beh2549@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com""
