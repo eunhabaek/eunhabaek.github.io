@@ -95,9 +95,9 @@ analytics:
 author:
   name             : "WhiteGalaxy"
   avatar           : "/assets/poodle.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "**Go get'em !**"
+  bio              : "**Go get'em!**"
   location         : "South Korea"
-  email            : 
+  email            : "beh2549@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
