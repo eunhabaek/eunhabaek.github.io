@@ -15,7 +15,7 @@ last_modified_at: 2020-08-05T
     
      scRNA-seq 실험에서 얻은 데이터의 computational 분석의 첫 번째 단계 (노란색)는 일반적인 시퀀싱입니다. 이후 단계 (오렌지)는 scRNASeq의 기술적 차이를 해결하기 위해 기존 RNASeq 분석 방법과 새로운 방법이 혼합되어 있습니다. 마지막으로 생물학적 해석 (파란색) 은 scRNASeq를 위해 특별히 개발 된 방법으로 분석 합니다.
     
-    ![figure1](./_posts/figures/2020-04-12-1.png)
+    ![figure1](./figures/2020-04-12-1.png)
     
     그림 2.2 : scRNA-seq 분석 순서도
     

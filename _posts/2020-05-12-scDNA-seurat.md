@@ -74,7 +74,7 @@ library(Seurat)
     VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
     ```
     
-    ![figure1](./_posts/figures/2020-05-12-1.png)
+    ![figure1](./eunhabaek.github.io/figures/2020-05-12-1.png)
     
     ```bash
     # FeatureScatter는 feature-feature relationships 시각화에 주로 쓰인다.
