@@ -3,9 +3,9 @@ title: "Methylseq 파이프라인"
 excerpt: "methylseq 파이프라인"
 
 categories:
-  - Analysis
+  - Pipeline
 tags:
-  - Methylseq
+  - Analysis
 last_modified_at: 2021-08-03
 ---
 

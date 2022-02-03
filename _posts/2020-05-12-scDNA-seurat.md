@@ -1,11 +1,11 @@
 ---
-title:  "scDNA seq analysis(2) - cellRanger"
-excerpt: "scDNA sequencing analysis with cellRanger"
+title:  "scDNA seq analysis(3) - Seurat"
+excerpt: "scDNA sequencing analysis with Seurat"
 
 categories:
   - NGS
 tags:
-  - sequencing
+  - Analysis
 
 last_modified_at: 2020-09-12T
 ---
@@ -67,14 +67,14 @@ library(Seurat)
     튜토리얼에서는 이러한 세포들을 filtering 할 것이다.
     
     - unique feature counts over 2,500 or less than 200
-    - >5% mitochondrial counts
+    - 5% 이상 mitochondrial counts
     
     ```bash
     # QC metrics 시각화(violin plot) -> raw sample의 분포 확인가능
     VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
     ```
     
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/068722b5-28bf-4dfc-8e5e-bd24e0de0a60/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/068722b5-28bf-4dfc-8e5e-bd24e0de0a60/Untitled.png)
+    ![figure1](./figures/2020-05-12-1.png)
     
     ```bash
     # FeatureScatter는 feature-feature relationships 시각화에 주로 쓰인다.
@@ -83,7 +83,7 @@ library(Seurat)
     plot1 + plot2
     ```
     
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ebfa7f41-d3f2-49cc-9292-5f1e9354dbbc/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ebfa7f41-d3f2-49cc-9292-5f1e9354dbbc/Untitled.png)
+   ![figure2](./figures/2020-05-12-2.png)
     
     ```bash
     pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
@@ -115,7 +115,7 @@ library(Seurat)
     plot1 + plot2
     ```
     
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07fa37a1-c2c9-458f-b556-a4466ef55a2c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07fa37a1-c2c9-458f-b556-a4466ef55a2c/Untitled.png)
+    ![figure3](./figures/2020-05-12-3.png)
     
 - Scaling the data
     
@@ -167,13 +167,13 @@ library(Seurat)
     VizDimLoadings(pbmc, dims = 1:2, reduction = "pca")
     ```
     
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/418c95e2-f7b6-4776-a775-712f83648c9c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/418c95e2-f7b6-4776-a775-712f83648c9c/Untitled.png)
+    ![figure4](./figures/2020-05-12-4.png)
     
     ```bash
     DimPlot(pbmc, reduction = "pca")
     ```
     
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/01cf22f5-8660-41d4-8f5f-28726a60b461/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/01cf22f5-8660-41d4-8f5f-28726a60b461/Untitled.png)
+    ![figure5](./figures/2020-05-12-5.png)
     
     DimHeatmap function을 통해 dataset의 heterogeneity를 분석할 수 있고 pc선택에 유용하다. cell과 feature는 PCA score순으로 정렬되어 있다. cells 파라미터로 양 극단의 몇개의 cell을 보여줄 지 설정할 수 있다.
     
@@ -181,13 +181,13 @@ library(Seurat)
     DimHeatmap(pbmc, dims = 1, cells = 500, balanced = TRUE)
     ```
     
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1a0a64d6-2f4e-49a1-9df9-dde4a47be865/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1a0a64d6-2f4e-49a1-9df9-dde4a47be865/Untitled.png)
+    ![figure6](./figures/2020-05-12-6.png)
     
     ```bash
     DimHeatmap(pbmc, dims = 1:6, cells = 500, balanced = TRUE)
     ```
     
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1f01480c-9b87-4829-ad47-42163dde2b85/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1f01480c-9b87-4829-ad47-42163dde2b85/Untitled.png)
+    ![figure7](./figures/2020-05-12-7.png)
     
 - Determine the 'dimensionality' of the dataset
     
@@ -207,7 +207,7 @@ library(Seurat)
     JackStrawPlot(pbmc, dims = 1:15)
     ```
     
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c969cf37-95a2-4a3f-9b19-d311714db3ec/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c969cf37-95a2-4a3f-9b19-d311714db3ec/Untitled.png)
+    ![figure8](./figures/2020-05-12-8.png)
     
     다른 heuristic method 에는 Elbow plot이 있다. Elbow plot은 각 pc의 분산에 대한 비중을 기준으로 분석한다 (ElbowPlot function). 예시에서는 PC9-10 사이에서 elbow를 볼 수 있는데, ~~suggesting that the majority of true signal is captured in the first 10 PCs.~~
     
@@ -215,4 +215,4 @@ library(Seurat)
     ElbowPlot(pbmc)
     ```
     
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9c435d75-51a2-40f3-99be-d46ad208c764/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9c435d75-51a2-40f3-99be-d46ad208c764/Untitled.png)
+    ![figure9](./figures/2020-05-12-9.png)

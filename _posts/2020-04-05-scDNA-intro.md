@@ -5,7 +5,7 @@ excerpt: "about scDNA sequencing"
 categories:
   - NGS
 tags:
-  - sequencing
+  - Analysis
 
 last_modified_at: 2020-07-03T
 ---

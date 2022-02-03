@@ -3,7 +3,7 @@ title: "Linux 기본 명령어"
 excerpt: "Linux를 사용하는데 필요한 기본 명령어를 알아보자."
 
 categories:
-  - Linux
+  - Shell
 tags:
   - Basic
 last_modified_at: 2020-08-03

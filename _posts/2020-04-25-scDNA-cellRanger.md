@@ -5,7 +5,7 @@ excerpt: "scDNA sequencing analysis with cellRanger"
 categories:
   - NGS
 tags:
-  - sequencing
+  - Analysis
 
 last_modified_at: 2020-09-12T
 ---
@@ -16,7 +16,7 @@ last_modified_at: 2020-09-12T
     
      10xgenomics 사에서 만든 chromium을 통해 얻어진 scRNAseq을 분석하는 pipeline이다. reads를 align하고 feature barcode matrix, gene expression matrix등을 만든다.
     
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ab1a7935-4ef0-4384-a16f-82a8a38741a8/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ab1a7935-4ef0-4384-a16f-82a8a38741a8/Untitled.png)
+    ![figure1](./figures/2020-04-25-1.png)
     
     - **[cellranger mkfastq](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/mkfastq)** raw base call (BCL) 파일을 demultiplexing하여 FASTQ 파일로 만든다. Illumina사의 bcl2fastq와 동일한 역할이라 보면 된다.
     - **[cellranger count](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count)** cellranger mkfastq를 통해 만들어진 FASTQ 파일을 input으로 하여 alignment, filtering, barcode counting, and UMI counting 과정을 진행하고 feature barcode matrix, gene expression matrix등을 만든다.

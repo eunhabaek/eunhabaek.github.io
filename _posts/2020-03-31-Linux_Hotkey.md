@@ -3,7 +3,7 @@ title:  "Linux 단축키"
 excerpt: "Linux를 사용할 떄 편리한 기본적인 단축키를 알아보자."
 
 categories:
-  - Linux
+  - Shell
 tags:
   - Basic
 

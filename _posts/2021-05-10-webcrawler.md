@@ -5,7 +5,7 @@ excerpt: "OncoKB 사이트에서 원하는 data를 추출하기 위한 웹크롤
 categories:
   - Python
 tags:
-  - webcrawl, webscrap, selenium
+  - datahandling
 last_modified_at: 2021-10-03
 ---
 
