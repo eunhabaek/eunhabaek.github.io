@@ -10,6 +10,7 @@ tags:
 last_modified_at: 2020-06-02T
 ---
 
+
 scRNAseq Data를 다운받기 위해서 산학 서버(centOS server) 에 계정을 만들었고, 사용해 봤다.
 
 명령어로는 ssh를 사용한다.
@@ -26,6 +27,7 @@ shh -p [num] eunha@[ip]
 qlogin -q anode64.q@anode64-1 -pe pe_slots 12
 qsub fastq-dump.sh -q anode64.q@anode64-1 -pe pe_slots 12
 ```
+
 
  옵션 -q 를 이용하여 원하는 노드를 선택하고 -pe로 슬롯 개수를 정할 수 있다.  .sh로 끝나는 파일은 bash 파일이라고 하는데 리눅스에서 반복적인 코드를 실행할 때 중요하게 쓰이는 쉘 스크립트이다. bash 파일은 vi, vim 또는 nano 등으로 만들면 되는데 파일 이름 형식은 .sh로 끝나게 해야하고 내용의 맨 첫 줄에도 형식이 있다.  
 
