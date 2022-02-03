@@ -74,7 +74,7 @@ library(Seurat)
     VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
     ```
     
-    ![figure1](/eunhabaek.github.io/figures/2020-05-12-1.png)
+    ![figure1](/figures/2020-05-12-1.png)
     
     ```bash
     # FeatureScatter는 feature-feature relationships 시각화에 주로 쓰인다.
@@ -83,7 +83,7 @@ library(Seurat)
     plot1 + plot2
     ```
     
-   ![figure2](/_posts/figures/2020-05-12-2.png)
+   ![figure2](/figures/2020-05-12-2.png)
     
     ```bash
     pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
@@ -167,13 +167,13 @@ library(Seurat)
     VizDimLoadings(pbmc, dims = 1:2, reduction = "pca")
     ```
     
-    ![figure4](./_posts/figures/2020-05-12-4.png)
+    ![figure4](/figures/2020-05-12-4.png)
     
     ```bash
     DimPlot(pbmc, reduction = "pca")
     ```
     
-    ![figure5](./_posts/figures/2020-05-12-5.png)
+    ![figure5](/figures/2020-05-12-5.png)
     
     DimHeatmap function을 통해 dataset의 heterogeneity를 분석할 수 있고 pc선택에 유용하다. cell과 feature는 PCA score순으로 정렬되어 있다. cells 파라미터로 양 극단의 몇개의 cell을 보여줄 지 설정할 수 있다.
     
@@ -181,13 +181,13 @@ library(Seurat)
     DimHeatmap(pbmc, dims = 1, cells = 500, balanced = TRUE)
     ```
     
-    ![figure6](./_posts/figures/2020-05-12-6.png)
+    ![figure6](/figures/2020-05-12-6.png)
     
     ```bash
     DimHeatmap(pbmc, dims = 1:6, cells = 500, balanced = TRUE)
     ```
     
-    ![figure7](./_posts/figures/2020-05-12-7.png)
+    ![figure7](/figures/2020-05-12-7.png)
     
 - Determine the 'dimensionality' of the dataset
     
@@ -207,7 +207,7 @@ library(Seurat)
     JackStrawPlot(pbmc, dims = 1:15)
     ```
     
-    ![figure8](./_posts/figures/2020-05-12-8.png)
+    ![figure8](/figures/2020-05-12-8.png)
     
     다른 heuristic method 에는 Elbow plot이 있다. Elbow plot은 각 pc의 분산에 대한 비중을 기준으로 분석한다 (ElbowPlot function). 예시에서는 PC9-10 사이에서 elbow를 볼 수 있는데, ~~suggesting that the majority of true signal is captured in the first 10 PCs.~~
     
@@ -215,4 +215,4 @@ library(Seurat)
     ElbowPlot(pbmc)
     ```
     
-    ![figure9](./_posts/figures/2020-05-12-9.png)
+    ![figure9](/figures/2020-05-12-9.png)
