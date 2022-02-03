@@ -1,5 +1,5 @@
 ---
-title:  "scDNA seq analysis(3) - Seurat"
+title:  "scDNA seq analysis (3) - Seurat"
 excerpt: "scDNA sequencing analysis with Seurat"
 
 categories:

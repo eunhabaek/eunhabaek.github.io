@@ -1,5 +1,5 @@
 ---
-title:  "scDNA seq analysis(2) - cellRanger"
+title:  "scDNA seq analysis (2) - cellRanger"
 excerpt: "scDNA sequencing analysis with cellRanger"
 
 categories:
