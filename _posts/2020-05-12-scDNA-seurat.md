@@ -74,7 +74,7 @@ library(Seurat)
     VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
     ```
     
-    ![figure1](./eunhabaek.github.io/figures/2020-05-12-1.png)
+    ![figure1](/eunhabaek.github.io/figures/2020-05-12-1.png)
     
     ```bash
     # FeatureScatter는 feature-feature relationships 시각화에 주로 쓰인다.
@@ -83,7 +83,7 @@ library(Seurat)
     plot1 + plot2
     ```
     
-   ![figure2](./_posts/figures/2020-05-12-2.png)
+   ![figure2](/_posts/figures/2020-05-12-2.png)
     
     ```bash
     pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
@@ -115,7 +115,7 @@ library(Seurat)
     plot1 + plot2
     ```
     
-    ![figure3](./_posts/figures/2020-05-12-3.png)
+    ![figure3](/figures/2020-05-12-3.png)
     
 - Scaling the data
     
