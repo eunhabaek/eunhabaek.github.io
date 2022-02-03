@@ -106,7 +106,7 @@ github(https://github.com/ben-laufer/DMRichR/tree/master/man/figures)
 `DMRichR` is an R package and executable for the preprocessing, statistical analysis, and visualization of differentially methylated regions (DMRs) and global methylation levels from CpG count matrices (Bismark cytosine reports).
 
 `DMRichR::DM.R()` is a single function that performs all of the following steps:  
-![DMRichR analysis steps](./figures/dmrichr_flowchart.png)
+![DMRichR analysis steps](./_posts/figures/dmrichr_flowchart.png)
 
 
 ### 3.1 Install DMRichR ###
