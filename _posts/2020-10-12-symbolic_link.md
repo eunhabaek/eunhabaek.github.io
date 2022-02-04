@@ -7,7 +7,7 @@ categories:
 tags:
   - code
 
-last_modified_at: 2020-06-12T
+last_modified_at: 2020-10-12T
 ---
 
 ### Linux ln 명령어

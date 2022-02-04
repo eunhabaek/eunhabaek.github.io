@@ -6,7 +6,7 @@ categories:
   - Server
 tags:
   - Server
-last_modified_at: 2020-05-23
+last_modified_at: 2020-08-23
 ---
 
 ### 1. Bootable Ubuntu USB 만들기 (Ubuntu 설치 USB)***
