@@ -99,9 +99,9 @@ author:
   location         : "South Korea"
   email	           : "beh2549@gmail.com"
   links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/eunhabaek"
+   # - label: "GitHub"
+   #   icon: "fab fa-fw fa-github"
+   #   url: "https://github.com/eunhabaek"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/ehaxy/"
