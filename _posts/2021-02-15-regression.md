@@ -7,18 +7,21 @@ tags:
   - Analysis
 last_modified_at: 2021-02-15
 ---
+
 library(openxlsx)
 library(ggplot2)
 
-#데이터 import
+##**1.데이터 import**##
+```R
 Test<-read.xlsx('gene.CNV.mean.xlsx','Test')
 Train<-read.xlsx('gene.CNV.mean.xlsx','Train')
+```
 
-
-#regression 모델 만들기
-
+##**2.regression 모델 만들기**##
+```R
 model<-glm(max.CN~Tumor.fraction+reads.ratio,data=Train)
 summary(model)
+```
 
 _Call:
 glm(formula = max.CN ~ Tumor.fraction + reads.ratio, data = Train)
@@ -39,8 +42,9 @@ Number of Fisher Scoring iterations: 2_
 
 
 
-#모델 이용해 예측값
+##**3.모델 이용해 예측값**##
+```R
 predict(model,Test,interval='prediction')
-
+```
 
 
