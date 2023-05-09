@@ -9,12 +9,10 @@ tags:
 last_modified_at: 2021-08-03
 ---
 
-
-l# MethylSeq_Analysis_EHB202110
 Building Analysis Pipeline for WGBS(Whole Genome Bisulfite Sequencing) Data
 
 ## **1. Fastq random sampling (Optional)** ##
-github(https://github.com/lh3/seqtk)  
+[sektk github](https://github.com/lh3/seqtk)  
 If WGBS data is too big, it need to be sampled.
 
 ### 1.1 Install seqtk ###
@@ -34,7 +32,7 @@ seqtk sample -s123 test_R1.fastq 100000 > sub_test_R2.fastq
 ```
 
 ## **2. bismark** ##
-github(https://github.com/FelixKrueger/Bismark)  
+[bismark github](https://github.com/FelixKrueger/Bismark)  
 Bismark is a program to map bisulfite treated sequencing reads to a genome of interest and perform methylation calls in a single step
 
 **Bismark's main features**
