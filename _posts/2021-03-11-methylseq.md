@@ -99,7 +99,7 @@ bismark2summary [options]
 ```
 
 ## **3. DMRichR** ##
-github(https://github.com/ben-laufer/DMRichR/tree/master/man/figures)
+[DMRichR github](https://github.com/ben-laufer/DMRichR/tree/master/man/figures)
 
 `DMRichR` is an R package and executable for the preprocessing, statistical analysis, and visualization of differentially methylated regions (DMRs) and global methylation levels from CpG count matrices (Bismark cytosine reports).
 

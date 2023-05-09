@@ -1,5 +1,6 @@
 ---
 title: "regression model"
+excerpt: "ggplot regression model test"
 
 categories:
   - R
@@ -11,7 +12,6 @@ last_modified_at: 2021-02-15
 ## **0.library import** ##
 ```R
 library(openxlsx)
-library(ggplot2)
 ```
 
 ## **1.데이터 import** ##
