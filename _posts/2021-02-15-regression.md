@@ -8,22 +8,25 @@ tags:
 last_modified_at: 2021-02-15
 ---
 
+## **0.library import** ##
+```R
 library(openxlsx)
 library(ggplot2)
+```
 
-##**1.데이터 import**##
+## **1.데이터 import** ##
 ```R
 Test<-read.xlsx('gene.CNV.mean.xlsx','Test')
 Train<-read.xlsx('gene.CNV.mean.xlsx','Train')
 ```
 
-##**2.regression 모델 만들기**##
+## **2.regression 모델 만들기** ##
 ```R
 model<-glm(max.CN~Tumor.fraction+reads.ratio,data=Train)
 summary(model)
 ```
-
-_Call:
+```R
+Call:
 glm(formula = max.CN ~ Tumor.fraction + reads.ratio, data = Train)
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
@@ -38,11 +41,11 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
     Null deviance: 72887  on 83  degrees of freedom
 Residual deviance: 37575  on 81  degrees of freedom
 AIC: 759.06
-Number of Fisher Scoring iterations: 2_
+Number of Fisher Scoring iterations: 2
+```
 
 
-
-##**3.모델 이용해 예측값**##
+## **3.모델 이용해 예측값** ##
 ```R
 predict(model,Test,interval='prediction')
 ```
