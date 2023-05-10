@@ -1,6 +1,6 @@
 ---
-title: "regression model"
-excerpt: "ggplot regression model test"
+title: "Regression model"
+excerpt: "regression model test"
 
 categories:
   - R
@@ -9,18 +9,19 @@ tags:
 last_modified_at: 2021-02-15
 ---
 
-## **0.library import** ##
+## **0. library import** ##
 ```R
 library(openxlsx)
 ```
 
-## **1.데이터 import** ##
+## **1. 데이터 import** ##
 ```R
+#test 0.2 , train 0.8
 Test<-read.xlsx('gene.CNV.mean.xlsx','Test')
 Train<-read.xlsx('gene.CNV.mean.xlsx','Train')
 ```
 
-## **2.regression 모델 만들기** ##
+## **2. regression 모델 만들기** ##
 ```R
 model<-glm(max.CN~Tumor.fraction+reads.ratio,data=Train)
 summary(model)
@@ -45,9 +46,13 @@ Number of Fisher Scoring iterations: 2
 ```
 
 
-## **3.모델 이용해 예측값** ##
+## **3. 모델 이용해 예측값** ##
 ```R
 predict(model,Test,interval='prediction')
 ```
-
-
+```R
+        1         2         3         4         5         6         7         8         9 
+ 48.30034  51.62229 251.03720  26.35346  37.12539  37.46735 134.81769  26.35346  34.14540 
+       10        11        12 
+ 66.52223 146.73764  26.35346 
+```
