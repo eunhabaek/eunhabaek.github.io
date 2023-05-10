@@ -9,7 +9,6 @@ tags:
 last_modified_at: 2021-10-03
 ---
 
-# **Webscrapping_Selenium_EHB202111** #
 Extracting interest data from websites using Selenium on python
 
 ## **1. Install selenium** ##
