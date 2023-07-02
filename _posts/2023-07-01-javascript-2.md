@@ -23,6 +23,7 @@ last_modified_at: 2023-07-01
 - 저장 종류에 따른 분류
     - value: 값을 저장 - go, c
     - reference: 메모리 참조 - python, javascript
+
 ## 데이터 네이밍 ##
 
 1. 전역 데이터(global)로 만들기
@@ -53,11 +54,12 @@ last_modified_at: 2023-07-01
         - let 이름=new Array(개수) → 공간만 배정
     - 접근법
         - 이름[인덱스]
-        - ex) let names=[”A”,”B”]
-            names[0] →”A”
+        - ex) let names=[”A”,”B”]  
+            names[0] → ”A”  
             names[1] → “B”
             
     - 배열 데이터 개수 확인 : 배열.length
+
 ## 데이터 종류 변환 ##
 - Number(문자열)
 - String(숫자) → 출력
