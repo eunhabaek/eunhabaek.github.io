@@ -1,6 +1,6 @@
 ---
-title: "javascript (1)"
-excerpt: "javascript의 기초"
+title: "Javascript (1)"
+excerpt: "자바스크립트의 기초"
 
 categories:
   - frontend
@@ -8,6 +8,7 @@ tags:
   - javascript
 last_modified_at: 2023-06-30
 --- 
+
 ## **Javascript란** ##
 - HTML 동적 처리 향상을 위한 언어로, HTML에 혼합해서 사용 가능
 - 플랫폼(OS, device)에 독립적
@@ -27,41 +28,39 @@ last_modified_at: 2023-06-30
 ## **Javascript 작성 방법** ##
 1. 태그 안에 작성 (인라인 코드)
     - \<태그 이벤트이름=”코드\>
-    ```html
-    <body>
-    <!--인라인 코드-->
-        <button onclick="alert('버튼 클릭')">버튼</button>
-    </body>
-    ```
+        ```html
+        <body>
+            <button onclick="alert('버튼 클릭')">버튼</button>
+        </body>
+        ```
     
 2. html 문서에 영역 삽입
     - \<script\>내용\<script/\>
-    ```html
-    <body>
-        <button id="btn">버튼</button>
-        <script>
-            document.getElementById("btn").addEventListener("click",
-            function(){
-                alert("CLICK!!");alert("연속 호출")
-            })
-        </script>
-    </body>
-    ```
+        ```html
+        <body>
+            <button id="btn">버튼</button>
+            <script>
+                document.getElementById("btn").addEventListener("click",
+                function(){
+                    alert("CLICK!!");alert("연속 호출")
+                })
+            </script>
+        </body>
+        ```
 
 3. 별도 js 파일 불러오기
     - \<script src=”.js 파일경로”\>\<script/\>
+        **외부 .js 파일**
+        ```js
+            alert("시작하자 마자 수행")
+        ```
 
-    **외부 .js 파일**
-    ```js
-        alert("시작하자 마자 수행")
-    ```
-
-    **외부 스타일 적용할 본문 html 파일**
-    ```html
-    <head>
-        <script src="./js/basic.js"></script>
-    </head>
-    ```
+        **외부 스타일 적용할 본문 html 파일**
+        ```html
+        <head>
+            <script src="./js/basic.js"></script>
+        </head>
+        ```
     
 
 ## **주석 작성 방법** ##
@@ -105,10 +104,3 @@ last_modified_at: 2023-06-30
         </script>
     </body>
     ```
-
-
-
-- 규칙
-    - 대소문자 구분
-    - 줄단위 실행
-    - 한 줄에 2개 이상 명령어 실행할경우 ; 로 구분 (=나 함수사용)
