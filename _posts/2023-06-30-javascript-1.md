@@ -26,74 +26,75 @@ last_modified_at: 2023-06-30
 - electron: pc 앱 개발
 
 ## **Javascript 작성 방법** ##
-1. 태그 안에 작성 (인라인 코드)
-    - \<태그 이벤트이름=”코드\>
-        ```html
-        <body>
-            <button onclick="alert('버튼 클릭')">버튼</button>
-        </body>
-        ```
+#### 1. 태그 안에 작성 (인라인 코드) ####
+- \<태그 이벤트이름=”코드\>
+
+    ```html
+    <body>
+        <button onclick="alert('버튼 클릭')">버튼</button>
+    </body>
+    ```
     
-2. html 문서에 영역 삽입
-    - \<script\>내용\<script/\>
-        ```html
-        <body>
-            <button id="btn">버튼</button>
-            <script>
-                document.getElementById("btn").addEventListener("click",
-                function(){
-                    alert("CLICK!!");alert("연속 호출")
-                })
-            </script>
-        </body>
-        ```
+#### 2. html 문서에 영역 삽입 ####
+- \<script\>내용\<script/\>
+    ```html
+    <body>
+        <button id="btn">버튼</button>
+        <script>
+            document.getElementById("btn").addEventListener("click",
+            function(){
+                alert("CLICK!!");alert("연속 호출")
+            })
+        </script>
+    </body>
+    ```
 
-3. 별도 js 파일 불러오기
-    - \<script src=”.js 파일경로”\>\<script/\>
-        **외부 .js 파일**
-        ```js
-            alert("시작하자 마자 수행")
-        ```
+#### 3. 별도 js 파일 불러오기 ####
+- \<script src=”.js 파일경로”\>\<script/\>
+    **외부 .js 파일**
+    ```js
+        alert("시작하자 마자 수행")
+    ```
 
-        **외부 스타일 적용할 본문 html 파일**
-        ```html
-        <head>
-            <script src="./js/basic.js"></script>
-        </head>
-        ```
+    **외부 스타일 적용할 본문 html 파일**
+    ```html
+    <head>
+        <script src="./js/basic.js"></script>
+    </head>
+    ```
     
 
 ## **주석 작성 방법** ##
-1. 한 줄 주석
-    - //주석내용
-2. 블럭 주석
-    - /* …주석내용….*/
-3. 해석 안하고 문자열 처리→ 예약어 처리 가능
-    - <![CDATA[ 내용 ]]>
+#### 1. 한 줄 주석 ####
+- //주석내용
+#### 2. 블럭 주석 ####
+ - /* …주석내용….*/
+#### 3. 해석 안하고 문자열 처리→ 예약어 처리 가능 ####
+- <![CDATA[ 내용 ]]>
 
 
 ## **메세지 출력** ##
-1. 대화 상자로 출력
-    - alert()
+#### 1. 대화 상자로 출력 ####
+- alert()
 
-    ```html
-    <body>
-        <script>
-            alert("대화상자에 출력")
-        </script>
-    </body>
-    ```
+```html
+<body>
+    <script>
+        alert("대화상자에 출력")
+    </script>
+</body>
+```
 
-2. HTML 문서내에 출력
-    1. document.write(): 모아서 출력
-    ```html
-    <body>
-        <script>
-            document.write("화면에 출력")
-        </script>
-    </body>
-    ```
-    2. document.writeln(): 바로 출력
+#### 2. HTML 문서내에 출력 ####
+**document.write(): 모아서 출력**
+```html
+<body>
+    <script>
+        document.write("화면에 출력")
+    </script>
+</body>
+```
+**document.writeln(): 바로 출력**
 
 3. 검사창의 console 출력
     - console.log()
