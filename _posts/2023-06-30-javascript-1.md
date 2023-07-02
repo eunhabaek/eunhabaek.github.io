@@ -51,6 +51,7 @@ last_modified_at: 2023-06-30
 
 #### 3. 별도 js 파일 불러오기 ####
 - \<script src=”.js 파일경로”\>\<script/\>
+
     **외부 .js 파일**
     ```javascript
         alert("시작하자 마자 수행")
