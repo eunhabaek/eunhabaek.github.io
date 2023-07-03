@@ -153,8 +153,8 @@ last_modified_at: 2023-07-03
 - 객체가 소유한 함수는 메서드, 메서드는 리시버와 함께 호출해야하는데 window 객체의 메서드는 리시버 생략하면 widow 객체의 메서드가 호출
 - 리시버(클래스, 인스턴스…).메서드 형태
 - 종류
-  1. **alert(대화상자에 메세지 출력)**
-  2. **confirm(메세지) : 버튼 두개 (확인⇒true, 취소⇒false) boolean 값 리턴**
+  1. alert(대화상자에 메세지 출력)
+  2. confirm(메세지) : 버튼 두개 (확인⇒true, 취소⇒false) boolean 값 리턴
 
     ```html
     <script>
@@ -166,8 +166,7 @@ last_modified_at: 2023-07-03
       }
     </script>
     ```
-
-  3. **codec**
+  3. codec
     - encoding: 메모리에 저장되는 코드로 변환
     - decoding: 사람이 알아볼 수 있게 변환
     - utf-8 → 한글 표준
