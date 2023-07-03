@@ -76,32 +76,52 @@ last_modified_at: 2023-07-03
 - 함수도 하나의 자료형으로 간주(함수도 하나의 데이터)
 - 함수의 내용을 변수에 대입 가능, 매개변수로 사용 가능, 리턴 가능
 - 함수를 변수에 대입하는 이유- 이벤트 처리, 다형성 구현을 위해 (Delegate)
-    - 함수의 내용을 다른 변수에 담아 호출하는 것을 delegate(위임)이라고 함
+- 함수의 내용을 다른 변수에 담아 호출하는 것을 delegate(위임)이라고 함
+
+  ```html
+  <script>
+    //객체로서의 함수
+      function zergattack(){
+          document.write("저그의 공격"+"<br/>")
+      }
+
+      function protossattack(){
+          document.write("프로토스의 공격"+"<br/>")
+      }
+      
+      //zergattack()
+      //protossattack()
+
+      let starcraft
+      starcraft=zergattack //변수에 함수 대입
+      starcraft()
+      starcraft=protossattack
+      starcraft() //다형성
+  </script>
+  ```
+
 - 함수를 매개변수로 받는 이유- 함수에 따라 수행하는 일을 다르게 하기 위해(map reduce programming-map, filter, reduce)
 - 함수를 리턴하는 이유- 대부분 **closure** 구현 위해서 (customizing)
-    - **closure**: 함수 안에서 함수를 리턴하여 함수 내부 데이터를 외부에서 변경하는 것
+- closure: 함수 안에서 함수를 리턴하여 함수 내부 데이터를 외부에서 변경하는 것
    
-    ```html
-    <script>
-      //객체로서의 함수
-        function zergattack(){
-            document.write("저그의 공격"+"<br/>")
-        }
+  ```html
+  <script>
+    //closure 예제 ->전역변수 안쓰도록
 
-        function protossattack(){
-            document.write("프로토스의 공격"+"<br/>")
-        }
-        
-        //zergattack()
-        //protossattack()
+    function outer(){
+        let data=0 //함수 안에서만 사용 가능한 변수
 
-        let starcraft
-        starcraft=zergattack //변수에 함수 대입
-        starcraft()
-        starcraft=protossattack
-        starcraft() //다형성
-    </script>
-    ```
+        return function(){
+            data++
+            console.log(data)
+        }        
+    } 
+
+    let inner=outer() //outer에서 return 함수가 저장
+    inner() //1
+    inner() //2
+  </script>
+  ```
     
 
 
@@ -114,15 +134,16 @@ last_modified_at: 2023-07-03
     
 - 함수를 미리 메모리에 할당(static)하지 않고 필요할때 메모리 할당(heap) →메모리 절약하나 시간 오래걸림
 - 일반적으로 이벤트(사용자나 시스템이 발생시키는 사건 ex. click…) 처리에 사용 (선택적 사용)
-    ```html
-    <script>
-        //arrow 함수
-        const arrow = () => {
-            alert("arrow function")
-        }
-        arrow()
-    </script>
-    ```
+
+  ```html
+  <script>
+      //arrow 함수
+      const arrow = () => {
+          alert("arrow function")
+      }
+      arrow()
+  </script>
+  ```
 ## 7. 내장함수 ##
 
 - 프로그래밍 언어가 제공
@@ -130,34 +151,34 @@ last_modified_at: 2023-07-03
 - 객체가 소유한 함수는 메서드, 메서드는 리시버와 함께 호출해야하는데 window 객체의 메서드는 리시버 생략하면 widow 객체의 메서드가 호출
 - 리시버(클래스, 인스턴스…).메서드 형태
 - 종류
-    1. alert(대화상자에 메세지 출력)
-    2. confirm(메세지) : 버튼 두개 (확인⇒true, 취소⇒false) boolean 값 리턴
-    ```html
-    <script>
-              let hungry=confirm("배고픈가요?")
-        if (hungry){
-            document.write("배고파요")
-        }else{
-            document.write("배고프지 않아요")
-        }
+  1. alert(대화상자에 메세지 출력)
+  2. confirm(메세지) : 버튼 두개 (확인⇒true, 취소⇒false) boolean 값 리턴
+  ```html
+  <script>
+            let hungry=confirm("배고픈가요?")
+      if (hungry){
+          document.write("배고파요")
+      }else{
+          document.write("배고프지 않아요")
+      }
 
-    </script>
-    ```
+  </script>
+  ```
 
 
-    3.  codec
-        - encoding: 메모리에 저장되는 코드로 변환
-        - decoding: 사람이 알아볼 수 있게 변환
-        - utf-8 → 한글 표준
-        - ms949(cp949)→ windows
-        - euc-kr → 옛날 웹
-        - iso-latin1(iso-8859-1) →서유럽 표준어
-          ```html
-          <script>
-                    let iu="name=아이유"
-        let encoding=encodeURI(iu)
-        
-        alert(encoding)//한글 깨짐
-        alert(decodeURI(encoding)) //다시 한글 정상 출력
-          </script>
+  3.  codec
+      - encoding: 메모리에 저장되는 코드로 변환
+      - decoding: 사람이 알아볼 수 있게 변환
+      - utf-8 → 한글 표준
+      - ms949(cp949)→ windows
+      - euc-kr → 옛날 웹
+      - iso-latin1(iso-8859-1) →서유럽 표준어
+        ```html
+        <script>
+                  let iu="name=아이유"
+      let encoding=encodeURI(iu)
+      
+      alert(encoding)//한글 깨짐
+      alert(decodeURI(encoding)) //다시 한글 정상 출력
+        </script>
           ```
