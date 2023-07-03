@@ -13,7 +13,7 @@ last_modified_at: 2023-07-03
     표현식이 falsy가 아니면 반복할 내용  
     }  
 
- ```html
+    ```html
     //메뉴 선택하기
     <script>
         //10 이하 홀수 순서대로 출력
@@ -23,7 +23,7 @@ last_modified_at: 2023-07-03
             odd++
         }
     </script>
- ```
+    ```
 
     
 - 표현식을 확인하면서 반복
@@ -44,13 +44,13 @@ last_modified_at: 2023-07-03
 - 세가지 식은 생략 가능, 셋 다 없으(;;)면 무한반복
 - for에서 첫번째, 세번째 식에 여러개 수행문 작성 가능 “,”로 구분
 
- ```html
+    ```html
     <script>
         for(let idx=0,i=0;idx<5&&i<6;idx++,i+=2){
             console.log(idx+"+"+i)
         }
     </script>
- ```
+    ```
 ## 4. for ~ in ##
 - for(임시변수 in 배열이나 객체){  
     수행할 문장  

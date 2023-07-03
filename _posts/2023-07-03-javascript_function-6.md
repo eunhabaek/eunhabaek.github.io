@@ -81,6 +81,23 @@ last_modified_at: 2023-07-03
    
     ```html
     <script>
+      //객체로서의 함수
+        function zergattack(){
+            document.write("저그의 공격"+"<br/>")
+        }
+
+        function protossattack(){
+            document.write("프로토스의 공격"+"<br/>")
+        }
+        
+        //zergattack()
+        //protossattack()
+
+        let starcraft
+        starcraft=zergattack //변수에 함수 대입
+        starcraft()
+        starcraft=protossattack
+        starcraft() //다형성
     </script>
     ```
     
@@ -97,6 +114,11 @@ last_modified_at: 2023-07-03
 - 일반적으로 이벤트(사용자나 시스템이 발생시키는 사건 ex. click…) 처리에 사용 (선택적 사용)
     ```html
     <script>
+        //arrow 함수
+        const arrow = () => {
+            alert("arrow function")
+        }
+        arrow()
     </script>
     ```
 ## 7. 내장함수 ##
@@ -110,6 +132,13 @@ last_modified_at: 2023-07-03
     2. confirm(메세지) : 버튼 두개 (확인⇒true, 취소⇒false) boolean 값 리턴
     ```html
     <script>
+              let hungry=confirm("배고픈가요?")
+        if (hungry){
+            document.write("배고파요")
+        }else{
+            document.write("배고프지 않아요")
+        }
+
     </script>
     ```
 
@@ -123,5 +152,10 @@ last_modified_at: 2023-07-03
         - iso-latin1(iso-8859-1) →서유럽 표준어
           ```html
           <script>
+                    let iu="name=아이유"
+        let encoding=encodeURI(iu)
+        
+        alert(encoding)//한글 깨짐
+        alert(decodeURI(encoding)) //다시 한글 정상 출력
           </script>
           ```
