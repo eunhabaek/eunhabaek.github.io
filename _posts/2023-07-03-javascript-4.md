@@ -28,6 +28,45 @@ last_modified_at: 2023-07-03
 - 정수나 문자열 표현식에 true 설정하면 값의 자리에 조건 설정해서 true인 경우 수행하도록 할 수 있음
 - case 개수는 제한 없음
 - default 생략 가능
+    ```html
+    <script>
+        //switch 예제 1
+        //메뉴 선택하기
+        let menu=1
+        let msg3;
+        switch(menu){
+            case 0:
+                msg3='한식'
+                break;
+            case 1:
+                msg3='양식'
+                break;
+            case 2:
+                msg3='일식'
+                break;
+            default: '선택을 다시 해주세요'
+        }
+        console.log(msg3)
+
+        //switch 예제 2
+        //switch를 if처럼 사용하기 -> if가 더 간결, 권장하지는 않음
+        let score2=88
+        let msg4;
+        switch(true){
+            case score2>=80&&score<100:
+                msg4='A'
+                break;
+            case score2>=60:
+                msg4='B'
+                break;
+            case score2>=0:
+                msg4='C'
+                break;
+            default: '점수를 바르게 입력해주세요'
+        }
+        console.log(msg4)
+    </script>
+    ```
     
 ## 2. if 문 ##
 - 조건에 의한 분기 (true, false)
@@ -39,7 +78,24 @@ last_modified_at: 2023-07-03
     
 - falsy: false, 0, null, undefiend, “”
 - else if는 무제한 사용 가능
-    - 조건식은 변수, 연산, 리턴 있는 함수 호출
+- 조건식은 변수, 연산, 리턴 있는 함수 호출
+
+    ```html
+    <script>
+        //year가 윤년이면 "윤년", 아니면 "평년"
+        let year=2024;
+        let msg2;
+        if (year%4==0&&year%100!=0||year%400==0){
+            msg2=year+"년: 윤년"
+        }else if(year<0){
+            msg2=year+": 올바른 년도가 아닙니다."
+        }else{
+            msg2=year+"년: 평년"
+        }
+        console.log(msg2)
+    </script>
+    ```
+
 ## 3. if나 switch 사용시 주의점 ##
 - if(리스트로 찾음)보다 switch(해시로 찾음)가 빠름
 - 도달할 수 없는 코드 작성→ 화이트 박스 테스트로 확인
