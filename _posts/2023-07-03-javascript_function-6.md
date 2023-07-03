@@ -16,28 +16,26 @@ last_modified_at: 2023-07-03
   - 메모리를 효율적으로 이용 (스택 1mb로 한정,static과 heap은 거의 무한)
 
 ## 2. 함수의 종류 ##
-- user defie function: 사용자 정의 함수
-  - function 함수명(매개변수 나열){
-      함수 내용
-      return 데이터 //생략가능
+#### user defie function: 사용자 정의 함수 ####
+- function 함수명(매개변수 나열){
+    함수 내용
+    return 데이터 //생략가능
+    }
+- 위의 내용 자체를 let. var 이용하여 변수로 할당 가능 ->최근 권장되는 방식, 순서 중요, 함수 먼저 작성
+
+  ```html
+  <script>
+      let f1=function(){
+          document.write("안녕"+"<br/>")
       }
-  - 위의 내용 자체를 let. var 이용하여 변수로 할당 가능 ->최근 권장되는 방식, 순서 중요, 함수 먼저 작성
-
-    ```html
-    <script>
-        let f1=function(){
-            document.write("안녕"+"<br/>")
-        }
-        f1() //별도 메모리 공간 할당받아 f1 실행
-    </script>
-    ```
-
-
-  - 함수 만들면 static(이름 O)/heap(이름 X →rambda: 메모리 절약)에 올라옴
-  - 함수 호출=실행→ stack에 메모리 할당됨
-  - 함수 이름만 기재할 경우 함수를 참조하는 것
-- maker function: 언어가 제공
-- 3rd party function: 다른 개발자가 만들어 제공
+      f1() //별도 메모리 공간 할당받아 f1 실행
+  </script>
+  ```
+- 함수 만들면 static(이름 O)/heap(이름 X →rambda: 메모리 절약)에 올라옴
+- 함수 호출=실행→ stack에 메모리 할당됨
+- 함수 이름만 기재할 경우 함수를 참조하는 것
+#### maker function: 언어가 제공
+#### 3rd party function: 다른 개발자가 만들어 제공
     
 
 ## 3. 매개변수(argument, parameter, 인자, 인수) ##
