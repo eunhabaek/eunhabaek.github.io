@@ -166,7 +166,8 @@ last_modified_at: 2023-07-03
       }
     </script>
     ```
-  3.  **codec**
+
+  3. **codec**
     - encoding: 메모리에 저장되는 코드로 변환
     - decoding: 사람이 알아볼 수 있게 변환
     - utf-8 → 한글 표준
