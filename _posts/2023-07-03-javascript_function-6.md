@@ -156,30 +156,30 @@ last_modified_at: 2023-07-03
   1. **alert(대화상자에 메세지 출력)**
   2. **confirm(메세지) : 버튼 두개 (확인⇒true, 취소⇒false) boolean 값 리턴**
 
-  ```html
-  <script>
-    let hungry=confirm("배고픈가요?")
-    if (hungry){
-        document.write("배고파요")
-    }else{
-        document.write("배고프지 않아요")
-    }
-  </script>
-  ```
+    ```html
+    <script>
+      let hungry=confirm("배고픈가요?")
+      if (hungry){
+          document.write("배고파요")
+      }else{
+          document.write("배고프지 않아요")
+      }
+    </script>
+    ```
   3.  **codec**
-      - encoding: 메모리에 저장되는 코드로 변환
-      - decoding: 사람이 알아볼 수 있게 변환
-      - utf-8 → 한글 표준
-      - ms949(cp949)→ windows
-      - euc-kr → 옛날 웹
-      - iso-latin1(iso-8859-1) →서유럽 표준어
+    - encoding: 메모리에 저장되는 코드로 변환
+    - decoding: 사람이 알아볼 수 있게 변환
+    - utf-8 → 한글 표준
+    - ms949(cp949)→ windows
+    - euc-kr → 옛날 웹
+    - iso-latin1(iso-8859-1) →서유럽 표준어
 
-        ```html
-        <script>
-          let iu="name=아이유"
-          let encoding=encodeURI(iu)
-          
-          alert(encoding)//한글 깨짐
-          alert(decodeURI(encoding)) //다시 한글 정상 출력
-        </script>
-        ```
+      ```html
+      <script>
+        let iu="name=아이유"
+        let encoding=encodeURI(iu)
+        
+        alert(encoding)//한글 깨짐
+        alert(decodeURI(encoding)) //다시 한글 정상 출력
+      </script>
+      ```
