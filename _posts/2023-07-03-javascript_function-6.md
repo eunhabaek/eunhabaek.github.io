@@ -84,6 +84,8 @@ last_modified_at: 2023-07-03
     </script>
     ```
     
+
+
 ## 6. arrow function (익명함수) ##
 
 - 함수를 이름없이 생성
@@ -93,7 +95,10 @@ last_modified_at: 2023-07-03
     
 - 함수를 미리 메모리에 할당(static)하지 않고 필요할때 메모리 할당(heap) →메모리 절약하나 시간 오래걸림
 - 일반적으로 이벤트(사용자나 시스템이 발생시키는 사건 ex. click…) 처리에 사용 (선택적 사용)
-
+    ```html
+    <script>
+    </script>
+    ```
 ## 7. 내장함수 ##
 
 - 프로그래밍 언어가 제공
@@ -103,6 +108,12 @@ last_modified_at: 2023-07-03
 - 종류
     1. alert(대화상자에 메세지 출력)
     2. confirm(메세지) : 버튼 두개 (확인⇒true, 취소⇒false) boolean 값 리턴
+    ```html
+    <script>
+    </script>
+    ```
+
+
     3.  codec
         - encoding: 메모리에 저장되는 코드로 변환
         - decoding: 사람이 알아볼 수 있게 변환
@@ -110,3 +121,7 @@ last_modified_at: 2023-07-03
         - ms949(cp949)→ windows
         - euc-kr → 옛날 웹
         - iso-latin1(iso-8859-1) →서유럽 표준어
+          ```html
+          <script>
+          </script>
+          ```
