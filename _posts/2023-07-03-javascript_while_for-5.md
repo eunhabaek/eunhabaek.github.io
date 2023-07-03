@@ -24,9 +24,8 @@ last_modified_at: 2023-07-03
         }
     </script>
     ```
-
-    
 - 표현식을 확인하면서 반복
+
 ## 2. do ~ while ##
 - 형식: do{  
     표현식이 falsy가 아니면 반복할 내용  
@@ -58,7 +57,8 @@ last_modified_at: 2023-07-03
     
 - 배열에서는 인덱스가 순서대로 임시변수에 대입, 개체의 경우는 속성이 임시변수에 대입
 - 순회 (iteration): 0개 이상의 데이터를 가진 collection을 순차적으로 접근, index 불필요
- ```html
+
+    ```html
     <script>
         animals=["cat","dog","rabbit"]
         for (ams in animals){
@@ -66,7 +66,7 @@ last_modified_at: 2023-07-03
             console.log(animals[ams]) // 배열 요소 출력
         }
     </script>
- ```
+    ```
 
 ## 5. 기타 ##
 - break: 반복문 종료
