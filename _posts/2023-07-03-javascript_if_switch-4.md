@@ -12,12 +12,12 @@ last_modified_at: 2023-07-03
 ## 1. switch 문 ##
 - 값에 의한 분기 (언어마다 다르므로 학습할 때 주의하기)
 - 값 = 정수, 문자열
-- 형식: switch(정수나 문자열 표현식){
-    case값1: 표현식이 값1일때 수행 내용
-    case값2: 표현식이 값2일때 수행 내용
-    ..
-    default: 일치 값 없을 때 수행 내용
-    }
+- 형식: switch(정수나 문자열 표현식){  
+    case값1: 표현식이 값1일때 수행 내용  
+    case값2: 표현식이 값2일때 수행 내용  
+    ..  
+    default: 일치 값 없을 때 수행 내용  
+    }  
 - javascript에서 switch는 fallthrough가 기본이라 일치하는 값 만났을 때 종료하려면 break 필요
 
     ```html
@@ -68,9 +68,9 @@ last_modified_at: 2023-07-03
     
 ## 2. if 문 ##
 - 조건에 의한 분기 (true, false)
-- 형식: if(조건식1){조건식1이 truthy 일 경우 수행되는 내용
-    }else if(조건식2){ 조건식1이 falsy이고 조건식2가 true일 경우 수행
-    }else{이전 모든 조건식 falsy일 경우 수행}
+- 형식: if(조건식1){조건식1이 truthy 일 경우 수행되는 내용  
+    }else if(조건식2){ 조건식1이 falsy이고 조건식2가 true일 경우 수행  
+    }else{이전 모든 조건식 falsy일 경우 수행}  
     
 - falsy: false, 0, null, undefiend, “”
 - else if는 무제한 사용 가능
