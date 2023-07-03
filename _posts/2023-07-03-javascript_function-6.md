@@ -14,6 +14,7 @@ last_modified_at: 2023-07-03
 - 목적
   - 모듈화: 프로그램을 용도별로 분할
   - 메모리를 효율적으로 이용 (스택 1mb로 한정,static과 heap은 거의 무한)
+
 ## 2. 함수의 종류 ##
 - user defie function: 사용자 정의 함수
   - function 함수명(매개변수 나열){
@@ -21,6 +22,7 @@ last_modified_at: 2023-07-03
       return 데이터 //생략가능
       }
   - 위의 내용 자체를 let. var 이용하여 변수로 할당 가능 ->최근 권장되는 방식, 순서 중요, 함수 먼저 작성
+
     ```html
     <script>
         let f1=function(){
@@ -29,6 +31,7 @@ last_modified_at: 2023-07-03
         f1() //별도 메모리 공간 할당받아 f1 실행
     </script>
     ```
+
 
   - 함수 만들면 static(이름 O)/heap(이름 X →rambda: 메모리 절약)에 올라옴
   - 함수 호출=실행→ stack에 메모리 할당됨
@@ -44,20 +47,21 @@ last_modified_at: 2023-07-03
 - javascript나 python은 매개변수 자료형 기재하지 않으므로 네이밍 중요
 - 함수 호출 시 뒤에서 생략 가능 →undefined
 - 매개변수 있는 함수를 매개변수 없이 호출하면 undefined
-    ```html
-    <script>
-      let intAddInt=function(a,b){
-              let summ=a+b
-              return summ
-            }
-        document.write(intAddInt(2,3)+"<br/>")
 
-        //매개변수 뒤에서 생략 가능
-        //생략하면 undefined 대입
+  ```html
+  <script>
+    let intAddInt=function(a,b){
+            let summ=a+b
+            return summ
+          }
+    document.write(intAddInt(2,3)+"<br/>")
 
-        result=intAddInt(3) //리턴값 변수 할당하면 재사용 가능
-        document.write(result+"<br/>")
-      </script>
+    //매개변수 뒤에서 생략 가능
+    //생략하면 undefined 대입
+
+    result=intAddInt(3) //리턴값 변수 할당하면 재사용 가능
+    document.write(result+"<br/>")
+  </script>
     ```
 
 ## 4. Return ##
