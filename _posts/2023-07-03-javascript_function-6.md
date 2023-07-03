@@ -16,7 +16,7 @@ last_modified_at: 2023-07-03
   - 메모리를 효율적으로 이용 (스택 1mb로 한정,static과 heap은 거의 무한)
 
 ## 2. 함수의 종류 ##
-#### a. User defie function: 사용자 정의 함수 ####
+#### User defie function: 사용자 정의 함수 ####
 - function 함수명(매개변수 나열){
     함수 내용
     return 데이터 //생략가능
@@ -35,8 +35,8 @@ last_modified_at: 2023-07-03
 - 함수 호출=실행→ stack에 메모리 할당됨
 - 함수 이름만 기재할 경우 함수를 참조하는 것
 
-#### b. Maker function: 언어가 제공
-#### c. 3rd party function: 다른 개발자가 만들어 제공
+#### Maker function: 언어가 제공
+#### 3rd party function: 다른 개발자가 만들어 제공
     
 
 ## 3. 매개변수(argument, parameter, 인자, 인수) ##
