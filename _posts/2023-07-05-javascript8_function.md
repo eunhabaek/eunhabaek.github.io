@@ -37,35 +37,35 @@ last_modified_at: 2023-07-05
   - 매개변수 1개, 매개변수 값을 속성에 대입
   - 내용 작성하는 경우 대부분 유효성 검사
 
-  ```javascript
-  //getter setter
-  let human = class{
-      constructor(name,score){
-          this.name=name
-          this.score=score
-      }
-      //print
-      disp(){console.log(this.name+":"+this.score)}
+    ```javascript
+    //getter setter
+    let human = class{
+        constructor(name,score){
+            this.name=name
+            this.score=score
+        }
+        //print
+        disp(){console.log(this.name+":"+this.score)}
 
-      //getter
-      getName(){return this.name}
+        //getter
+        getName(){return this.name}
 
-      //setter
-      setName(name){this.name=name}
+        //setter
+        setName(name){this.name=name}
 
-      getScore(){return this.score}
+        getScore(){return this.score}
 
-      //유효성 검사 setter
-      setScore(score){
-          if(score<0||score>100){
-              alert("적절하지 않은 점수입니다.")
-              return
-          }
-          this.score=score
-      }
-  }
+        //유효성 검사 setter
+        setScore(score){
+            if(score<0||score>100){
+                alert("적절하지 않은 점수입니다.")
+                return
+            }
+            this.score=score
+        }
+    }
+    ```
 
-  ```
 ## static 매서드 ##
 
 - 인스턴스 아니라 클래스가 호출하는 매서드
