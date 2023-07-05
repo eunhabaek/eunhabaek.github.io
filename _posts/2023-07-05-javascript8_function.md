@@ -79,4 +79,43 @@ obj2.setScore(100)
 obj2.disp()
 //인스턴스 없이 매서드 호출하려면 static 매서드 필요
 ```
-        
+
+## 상속 (Inheritance) ##
+- Sub class extends Super{}
+- 하위 클래스가 상위 클래스 모든 것 물려받음
+- 같은 기능 같은 이름, 다른 기능 다른 이름
+- 상속 관련 용어
+  - 객체지향에서는 상속 관계 = is a
+  - 상위 클래스: super, base
+  - 하위 클래스: sub, drived
+  - 단일 상속: 하나의 클래스로부터
+  - 다중 상속: 두개 이상으로부터
+- overriding(재정의)
+  - 상위클래스 메서드를 하위클래스에서 다시 정의함 (이미 있는 메서드)
+  - 추상 메서드(비어있음)를 다시 만드는 것은 재정의 아니고 구현(implementation)
+  - 목적: 기능 확장
+  - 상위 클래스 메서드를 호출해야 함
+- Super
+  - 하위클래스의 메서드에서 상위 메서드 호출시 super.메서드명
+
+```javascript
+//상속 예제
+let Super = class{
+    method(){
+        console.log("상위 클래스의 매서드")
+    }
+}
+//Sub 생성
+class Sub extends Super{
+    //overriding
+    method(){
+        super.method()
+        console.log("하위 클래스의 매서드")
+    }
+}
+
+let obj= new Sub()
+
+//Sub에는 method 없지만 Super로부터 상속받아서 method 사용 가능함
+obj.method()
+```
