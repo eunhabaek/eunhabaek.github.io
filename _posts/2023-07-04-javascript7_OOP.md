@@ -25,7 +25,7 @@ last_modified_at: 2023-07-03
 ## 사용자 정의 객체 ##
 - 객체는 이름으로, 배열은 순서로 찾음
 - 이름으로 찾는게 쉬우므로 데이터 전달 시 데이터는 객체로 전달하는것이 좋음
-- [ ]: 배열, { }: 객체
+- /[ /]: 배열, /{ /}: 객체
 - 객체 생성방법
     1. let, const 이름 {속성이름: 데이터or 함수, … } 
         - 이름.속성이름 = 데이터 (upsert→기존 속성에 없으면 insert, 있으면 update)
@@ -47,23 +47,23 @@ last_modified_at: 2023-07-03
             - new → heap에 올림
             - 생성자로 인스턴스 만들때는 new와 함께 호출하면 heap에 인스턴스 생성
             - constructor 목적은 초기화
-        - 역할
+        - 생성자의 역할
             - heap 공간 할당
             - 내부 초기화
 
-            ```javascript
-            let person=function(name){
-                        this.name=name
-                        this.disp=function(){console.log(this.name)}
-                    }
-            //매서드 말고 속성만 설정해서 인스턴스 생성
-            //생성자로 인스턴스 만들때는 new와 함께 호출하면 heap에 인스턴스 생성
-            ar3=[new person("eunha2"),new person("sera2")]
+        ```javascript
+        let person=function(name){
+                    this.name=name
+                    this.disp=function(){console.log(this.name)}
+                }
+        //매서드 말고 속성만 설정해서 인스턴스 생성
+        //생성자로 인스턴스 만들때는 new와 함께 호출하면 heap에 인스턴스 생성
+        ar3=[new person("eunha2"),new person("sera2")]
 
-            for(idx3 in ar3){
-                ar3[idx3].disp()
-            }
-            ```        
+        for(idx3 in ar3){
+            ar3[idx3].disp()
+        }
+        ```        
         
     3. 클래스를 만들고 생성하기 //가장 권장하는 방법
         - 클래스: 동일 인스턴스 만들기 위한 모형
