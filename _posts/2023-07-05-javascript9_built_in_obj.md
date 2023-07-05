@@ -46,6 +46,7 @@ last_modified_at: 2023-07-05
     ```
 
 #### 4. 배열 관련 함수 가진 객체
+
     ```javascript
     //Array 예제
     numar=[1,45,36,26,78,4,134]
