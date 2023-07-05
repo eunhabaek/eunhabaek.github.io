@@ -77,13 +77,13 @@ last_modified_at: 2023-07-05
       - 분산 데이터 처리 후 결과 모음
       - 병렬 처리 가능
 
-        ```javascript
-        //map 데이터 변환
-        let numarmap=numar.map((element,index,array)=>{
-            return element+1
-        })
-        console.log(numarmap)        
-        ```          
+      ```javascript
+      //map 데이터 변환
+      let numarmap=numar.map((element,index,array)=>{
+          return element+1
+      })
+      console.log(numarmap)        
+      ```          
   - **filter**: 추출
     - boolean 검사 후 추출
 
