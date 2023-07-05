@@ -43,27 +43,26 @@ last_modified_at: 2023-07-04
 
     2. 생성자로 만들기
         - constructor(생성자)는 class의 일부
-            - 생성자 호출법: new 생성자 이름(매개변수)
-            - new → heap에 올림
-            - 생성자로 인스턴스 만들때는 new와 함께 호출하면 heap에 인스턴스 생성
-            - constructor 목적은 초기화
-            - 생성자의 역할
-                - heap 공간 할당
-                - 내부 초기화
+        - 생성자 호출법: new 생성자 이름(매개변수)
+        - 생성자로 인스턴스 만들때는 new와 함께 호출하면 heap에 인스턴스 생성
+        - constructor 목적은 초기화
+        - 생성자의 역할
+            - heap 공간 할당
+            - 내부 초기화
 
-            ```javascript
-            let person=function(name){
-                        this.name=name
-                        this.disp=function(){console.log(this.name)}
-                    }
-            //매서드 말고 속성만 설정해서 인스턴스 생성
-            //생성자로 인스턴스 만들때는 new와 함께 호출하면 heap에 인스턴스 생성
-            ar3=[new person("eunha2"),new person("sera2")]
+        ```javascript
+        let person=function(name){
+                    this.name=name
+                    this.disp=function(){console.log(this.name)}
+                }
+        //매서드 말고 속성만 설정해서 인스턴스 생성
+        //생성자로 인스턴스 만들때는 new와 함께 호출하면 heap에 인스턴스 생성
+        ar3=[new person("eunha2"),new person("sera2")]
 
-            for(idx3 in ar3){
-                ar3[idx3].disp()
-            }
-            ```        
+        for(idx3 in ar3){
+            ar3[idx3].disp()
+        }
+        ```        
         
     3. 클래스를 만들고 생성하기 //가장 권장하는 방법
         - 클래스: 동일 인스턴스 만들기 위한 모형
