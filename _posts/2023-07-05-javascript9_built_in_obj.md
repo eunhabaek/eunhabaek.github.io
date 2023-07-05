@@ -155,3 +155,18 @@ last_modified_at: 2023-07-05
 ## DOM (document object model): body 태그 관련
 - body에 만든 요소 찾기
 - document.getElementByID(아이디명)
+
+  ```html
+  <body>
+    <!--DOM-->
+    <div id="display"></div>
+    <input type="text" id="name"/>
+    <button id="btn">버튼</button>
+
+    <script>
+      document.getElementById("btn").addEventListener("click",(e)=>{
+        document.getElementById("display").innerHTML=document.getElementById("name").value
+    })    
+    </script>
+  </body>
+  ```
