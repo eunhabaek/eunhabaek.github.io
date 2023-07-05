@@ -20,48 +20,44 @@ last_modified_at: 2023-07-03
     }  
 - javascript에서 switch는 fallthrough가 기본이라 일치하는 값 만났을 때 종료하려면 break 필요
 
-    ```html
+    ```javascript
     //메뉴 선택하기
-    <script>
-        let menu=1
-        let msg;
-        switch(menu){
-            case 0:
-                msg='한식'
-                break;
-            case 1:
-                msg='양식'
-                break;
-            case 2:
-                msg='일식'
-                break;
-            default: '선택을 다시 해주세요'
-        }
-        console.log(msg3)
-    </script>
+    let menu=1
+    let msg;
+    switch(menu){
+        case 0:
+            msg='한식'
+            break;
+        case 1:
+            msg='양식'
+            break;
+        case 2:
+            msg='일식'
+            break;
+        default: '선택을 다시 해주세요'
+    }
+    console.log(msg3)
     ```
 
 - 정수나 문자열 표현식에 true 설정하면 값의 자리에 조건 설정해서 true인 경우 수행하도록 할 수 있음
 
-    ```html
+    ```javascript
     //switch를 if처럼 사용하기 -> if가 더 간결, 권장하지는 않음
-    <script>
-        let score=88
-        let msg2;
-        switch(true){
-            case score>=80&&score<100:
-                msg2='A'
-                break;
-            case score>=60:
-                msg2='B'
-                break;
-            case score>=0:
-                msg2='C'
-                break;
-            default: '점수를 바르게 입력해주세요'
-        }
-        console.log(msg2)
-    </script>
+    let score=88
+    let msg2;
+    switch(true){
+        case score>=80&&score<100:
+            msg2='A'
+            break;
+        case score>=60:
+            msg2='B'
+            break;
+        case score>=0:
+            msg2='C'
+            break;
+        default: '점수를 바르게 입력해주세요'
+    }
+    console.log(msg2)
     ```
 - case 개수는 제한 없음
 - default 생략 가능
@@ -76,22 +72,20 @@ last_modified_at: 2023-07-03
 - else if는 무제한 사용 가능
 - 조건식은 변수, 연산, 리턴 있는 함수 호출
 
-    ```html
-    <script>
-        //year가 윤년이면 "윤년", 아니면 "평년"
-        let year=2024;
-        let msg3;
-        if (year%4==0&&year%100!=0||year%400==0){
-            msg3=year+"년: 윤년"
-        }else if(year<0){
-            msg3=year+": 올바른 년도가 아닙니다."
-        }else{
-            msg3=year+"년: 평년"
-        }
-        console.log(msg3)
-    </script>
+    ```javascript
+    //year가 윤년이면 "윤년", 아니면 "평년"
+    let year=2024;
+    let msg3;
+    if (year%4==0&&year%100!=0||year%400==0){
+        msg3=year+"년: 윤년"
+    }else if(year<0){
+        msg3=year+": 올바른 년도가 아닙니다."
+    }else{
+        msg3=year+"년: 평년"
+    }
+    console.log(msg3)
     ```
 
-## 3. if나 switch 사용시 주의점 ##
+## 3. if문이나 switch문 사용시 주의점 ##
 - if(리스트로 찾음)보다 switch(해시로 찾음)가 빠름
 - 도달할 수 없는 코드 작성→ 화이트 박스 테스트로 확인
