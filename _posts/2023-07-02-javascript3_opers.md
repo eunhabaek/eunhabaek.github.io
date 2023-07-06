@@ -24,15 +24,13 @@ last_modified_at: 2023-07-02
 2. **산술 연산자**
     - \+, \-,  *(문자열로 된 숫자 곱도 가능), /
     - %: 나머지, 실수일 경우 결과 이상할 수 있음
-        ```html
-        <script>
-            let index=0
-            let tomato=["토","마","토"]
-            setInterval(function(){
-                document.write(tomato[index%tomato.length]+"<br />")
-                index++
-            },1000)
-        </script>
+        ```javascript
+        let index=0
+        let tomato=["토","마","토"]
+        setInterval(function(){
+            document.write(tomato[index%tomato.length]+"<br />")
+            index++
+        },1000)
         ```
 
 3. **증감 연산자**
@@ -42,10 +40,9 @@ last_modified_at: 2023-07-02
     - \>, >=, <, <=, ==, !=
     - 실수 데이터와 실수 연산의 결과 동일성 여부 비교 주의 (머신 엡실론 문제) 10^-14 에러는 무시
     - 컴퓨터는 실수 데이터를 정확하게 표현 못함 (이진수로 저장하기 때문!)  소수 15번째 자리에서 반올림
-        ```html
-        <script>
-            console.log(1.0-0.8)
-        </script>
+    
+        ```javascript
+        console.log(1.0-0.8)
         ```
 5. **산술 비트 연산** → 그래픽에서 사용
     - 정수데이터를 2진수로 변경해서 비트 단위로 연산하고 결과를 정수로 리턴

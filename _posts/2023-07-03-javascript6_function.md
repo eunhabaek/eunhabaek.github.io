@@ -16,27 +16,25 @@ last_modified_at: 2023-07-03
   - 메모리를 효율적으로 이용 (스택 1mb로 한정,static과 heap은 거의 무한)
 
 ## 2. 함수의 종류 ##
-#### User defie function: 사용자 정의 함수 ####
+#### a. User defie function: 사용자 정의 함수 ####
 - function 함수명(매개변수 나열){
     함수 내용
     return 데이터 //생략가능
     }
 - 위의 내용 자체를 let. var 이용하여 변수로 할당 가능 ->최근 권장되는 방식, 순서 중요, 함수 먼저 작성
 
-  ```html
-  <script>
-      let f1=function(){
-          document.write("안녕"+"<br/>")
-      }
-      f1() //별도 메모리 공간 할당받아 f1 실행
-  </script>
+  ```javascript
+  let f1=function(){
+      document.write("안녕"+"<br/>")
+  }
+  f1() //별도 메모리 공간 할당받아 f1 실행
   ```
 - 함수 만들면 static(이름 O)/heap(이름 X →rambda: 메모리 절약)에 올라옴
 - 함수 호출=실행→ stack에 메모리 할당됨
 - 함수 이름만 기재할 경우 함수를 참조하는 것
 
-#### Maker function: 언어가 제공
-#### 3rd party function: 다른 개발자가 만들어 제공
+#### b. Maker function: 언어가 제공
+#### c. 3rd party function: 다른 개발자가 만들어 제공
     
 
 ## 3. 매개변수(argument, parameter, 인자, 인수) ##
@@ -47,20 +45,18 @@ last_modified_at: 2023-07-03
 - 함수 호출 시 뒤에서 생략 가능 →undefined
 - 매개변수 있는 함수를 매개변수 없이 호출하면 undefined
 
-  ```html
-  <script>
-    let intAddInt=function(a,b){
-            let summ=a+b
-            return summ
-          }
-    document.write(intAddInt(2,3)+"<br/>")
+  ```javascript
+  let intAddInt=function(a,b){
+          let summ=a+b
+          return summ
+        }
+  document.write(intAddInt(2,3)+"<br/>")
 
-    //매개변수 뒤에서 생략 가능
-    //생략하면 undefined 대입
+  //매개변수 뒤에서 생략 가능
+  //생략하면 undefined 대입
 
-    result=intAddInt(3) //리턴값 변수 할당하면 재사용 가능
-    document.write(result+"<br/>")
-  </script>
+  result=intAddInt(3) //리턴값 변수 할당하면 재사용 가능
+  document.write(result+"<br/>")
     ```
 
 ## 4. Return ##
@@ -79,49 +75,44 @@ last_modified_at: 2023-07-03
 - 함수를 변수에 대입하는 이유- 이벤트 처리, 다형성 구현을 위해 (Delegate)
 - 함수의 내용을 다른 변수에 담아 호출하는 것을 delegate(위임)이라고 함
 
-  ```html
-  <script>
-    //객체로서의 함수
-      function zergattack(){
-          document.write("저그의 공격"+"<br/>")
-      }
+  ```javascript
+  //객체로서의 함수
+  function zergattack(){
+      document.write("저그의 공격"+"<br/>")
+  }
 
-      function protossattack(){
-          document.write("프로토스의 공격"+"<br/>")
-      }
-      
-      //zergattack()
-      //protossattack()
+  function protossattack(){
+      document.write("프로토스의 공격"+"<br/>")
+  }
+  
+  //zergattack()
+  //protossattack()
 
-      let starcraft
-      starcraft=zergattack //변수에 함수 대입
-      starcraft()
-      starcraft=protossattack
-      starcraft() //다형성
-  </script>
+  let starcraft
+  starcraft=zergattack //변수에 함수 대입
+  starcraft()
+  starcraft=protossattack
+  starcraft() //다형성
   ```
 
 - 함수를 매개변수로 받는 이유- 함수에 따라 수행하는 일을 다르게 하기 위해(map reduce programming-map, filter, reduce)
 - 함수를 리턴하는 이유- 대부분 closure 구현 위해서 (customizing)
 - closure: 함수 안에서 함수를 리턴하여 함수 내부 데이터를 외부에서 변경하는 것
    
-  ```html
-  <script>
-    //closure 예제 ->전역변수 안쓰도록
+  ```javascript
+  //closure 예제 ->전역변수 안쓰도록
+  function outer(){
+      let data=0 //함수 안에서만 사용 가능한 변수
 
-    function outer(){
-        let data=0 //함수 안에서만 사용 가능한 변수
+      return function(){
+          data++
+          console.log(data)
+      }        
+  } 
 
-        return function(){
-            data++
-            console.log(data)
-        }        
-    } 
-
-    let inner=outer() //outer에서 return 함수가 저장
-    inner() //1
-    inner() //2
-  </script>
+  let inner=outer() //outer에서 return 함수가 저장
+  inner() //1
+  inner() //2
   ```
     
 
@@ -136,14 +127,12 @@ last_modified_at: 2023-07-03
 - 함수를 미리 메모리에 할당(static)하지 않고 필요할때 메모리 할당(heap) →메모리 절약하나 시간 오래걸림
 - 일반적으로 이벤트(사용자나 시스템이 발생시키는 사건 ex. click…) 처리에 사용 (선택적 사용)
 
-  ```html
-  <script>
-      //arrow 함수
-      const arrow = () => {
-          alert("arrow function")
-      }
-      arrow()
-  </script>
+  ```javascript
+  //arrow 함수
+  const arrow = () => {
+      alert("arrow function")
+  }
+  arrow()
   ```
 
 ## 7. 내장함수 ##
@@ -157,15 +146,13 @@ last_modified_at: 2023-07-03
   2. confirm(메세지)
     - 버튼 두개 (확인⇒true, 취소⇒false) boolean 값 리턴
 
-      ```html
-      <script>
-        let hungry=confirm("배고픈가요?")
-        if (hungry){
-            document.write("배고파요")
-        }else{
-            document.write("배고프지 않아요")
-        }
-      </script>
+      ```javascript
+      let hungry=confirm("배고픈가요?")
+      if (hungry){
+          document.write("배고파요")
+      }else{
+          document.write("배고프지 않아요")
+      }
       ```
   3. codec
     - encoding: 메모리에 저장되는 코드로 변환
@@ -175,12 +162,10 @@ last_modified_at: 2023-07-03
     - euc-kr → 옛날 웹
     - iso-latin1(iso-8859-1) →서유럽 표준어
 
-      ```html
-      <script>
-        let iu="name=아이유"
-        let encoding=encodeURI(iu)
-        
-        alert(encoding)//한글 깨짐
-        alert(decodeURI(encoding)) //다시 한글 정상 출력
-      </script>
+      ```javascript
+      let iu="name=아이유"
+      let encoding=encodeURI(iu)
+      
+      alert(encoding)//한글 깨짐
+      alert(decodeURI(encoding)) //다시 한글 정상 출력
       ```

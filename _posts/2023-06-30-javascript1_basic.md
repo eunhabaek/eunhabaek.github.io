@@ -77,31 +77,19 @@ last_modified_at: 2023-06-30
 #### 1. 대화 상자로 출력 ####
 - alert()
 
-    ```html
-    <body>
-        <script>
-            alert("대화상자에 출력")
-        </script>
-    </body>
+    ```javascript
+    alert("대화상자에 출력")
     ```
 
 #### 2. HTML 문서내에 출력 ####
 - document.write(): 모아서 출력
-    ```html
-    <body>
-        <script>
-            document.write("화면에 출력")
-        </script>
-    </body>
+    ```javascript
+    document.write("화면에 출력")
     ```
 - document.writeln(): 바로 출력
 
 #### 3. 검사창의 console 출력 ####
 - console.log()
-    ```html
-    <body>
-        <script>
-            console.log("콘솔에 출력")
-        </script>
-    </body>
+    ```javascript
+    console.log("콘솔에 출력")
     ```
