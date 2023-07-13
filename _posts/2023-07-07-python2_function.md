@@ -48,10 +48,10 @@ last_modified_at: 2023-07-07
 - 함수나 클래스의 내용을 나중에 작성하기 위해 비워두는 것
 - 애자일, TDD에 중요
         
-```python
- def temp():
-    pass
-```
+    ```python
+    def temp():
+        pass
+    ```
 
 ## 파이썬에서 함수는 일급 객체 ##
 - 자료형
@@ -81,76 +81,73 @@ last_modified_at: 2023-07-07
 - 형변환 (문자 →숫자)
 - 반복문보다 속도 빠름
     
-```python
-#문자열 3글자 이상인 부분 ... 처리하기
-animals=["cat","dog","rabbit","monkey"]
+    ```python
+    #문자열 3글자 이상인 부분 ... 처리하기
+    animals=["cat","dog","rabbit","monkey"]
 
-def ext(x):
-    if len(x)>3:
-        return x[0:3]+"..."
-    return x
+    def ext(x):
+        if len(x)>3:
+            return x[0:3]+"..."
+        return x
 
-results=list(map(ext,animals))
-print(results)
+    results=list(map(ext,animals))
+    print(results)
 
-```
+    ```
 
 #### 2. **filter** ####
 - 매개변수 1개 +bool 리턴 함수⇒ 결과 모아  bool 리턴
 
-```python
+    ```python
+    #리스트에서 결측치 제거 한 후 문자열 길이 >3 만 추출하기
 
-#리스트에서 결측치 제거 한 후 문자열 길이 >3 만 추출하기
+    colors=["red","orange","pink","blue",None]
 
-colors=["red","orange","pink","blue",None]
+    #결측치 확인
+    print(None in colors)
 
-#결측치 확인
-print(None in colors)
+    #결측치 제거
+    def no_na(x):
+        return x !=None
 
-#결측치 제거
-def no_na(x):
-    return x !=None
+    #이름 3> 만 추출
 
-#이름 3> 만 추출
-
-def len3(x):
-    return len(x)>=3
+    def len3(x):
+        return len(x)>=3
 
 
-colors0=list(filter(no_na,colors))
-result=list(filter(len3,colors0))
+    colors0=list(filter(no_na,colors))
+    result=list(filter(len3,colors0))
 
-#lambda 이용 실습
-colors0=list(filter(lambda x:x!=None,colors))
-result2=list(filter(lambda x:len(x)>=3,colors0))
-```
+    #lambda 이용 실습
+    colors0=list(filter(lambda x:x!=None,colors))
+    result2=list(filter(lambda x:len(x)>=3,colors0))
+    ```
 
 #### 3. **reduce** ####
 - 기본 내장함수 아님, functools 패키지
 - **매개변수 2개** 연산⇒ **하나의 결과**로 리턴
 - 결과 리턴해서 계속 **누적 연산** 진행
 
-```python
-from functools import reduce
+    ```python
+    from functools import reduce
 
-result=reduce(lambda x,y:x*y,[1,2,3,4])
-print(result)
-
-```
+    result=reduce(lambda x,y:x*y,[1,2,3,4])
+    print(result)
+    ```
 
 #### 4. **zip** ####
 - python 특이적 함수
 - 여러 데이터 모임 받아서 하나의 tuple 데이터로 묶어줌
 - 묶을 데이터 모임끼리 데이터 개수가 일치해야 함
     
-```python
-school=["초등학교","중학교","고등학교"]
-school_name=["광주","탄벌","양서"]
+    ```python
+    school=["초등학교","중학교","고등학교"]
+    school_name=["광주","탄벌","양서"]
 
-print(list(zip(school,school_name)))
-print(dict(zip(school,school_name)))
-
-```
+    print(list(zip(school,school_name)))
+    print(dict(zip(school,school_name)))
+    ```
 
 ## **high order function 고위함수** ##
 

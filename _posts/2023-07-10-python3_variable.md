@@ -1,6 +1,6 @@
 ---
 title: "Python (3)"
-excerpt: "파이썬의 변수와 데코레이터"
+excerpt: "파이썬의 전역/지역 변수와 데코레이터"
 
 categories:
   - python
@@ -25,17 +25,17 @@ last_modified_at: 2023-07-10
     - 나머지 변수는 외부 변수로 인식
 
 
-## **파이썬 변수** ##
+## **파이썬 전역/지역 변수** ##
 
-#### global ####
+#### 1. global ####
 - 함수 외부에서 생성, 전역 사용
     
-#### member=receiver ####
+#### 2. member=receiver ####
 - 클래스 내부에서 생성, 특정 인스턴스가 사용
 - self.xxxxx ⇒ non-local, in class
 - super.xxxx ⇒ 상위 클래스
     
-#### local ####
+#### 3. local ####
 - **함수 내부**에 생성, 내부에서만 사용
 - c, java는 { }가 로컬 기준
 
@@ -53,7 +53,6 @@ last_modified_at: 2023-07-10
 - 객체 지향에서는 전역 변수를 권장하지 않음⇒ closure 이용하여 함수 내부-외부 데이터 공유
 
     ```python
-
     ## closure 예제
 
     def outer():
@@ -67,7 +66,6 @@ last_modified_at: 2023-07-10
         return inner
 
     closure=outer()
-
     ```
 
 ## **프로그래밍 로직** ##
@@ -92,7 +90,6 @@ last_modified_at: 2023-07-10
         commonconcern1()
         businesslogic()
         commonconcern2()
-    
     ```
 
 ## **데코레이터(=intercepter) ⇒ for AOP (aspect of program)** ##
@@ -108,6 +105,8 @@ last_modified_at: 2023-07-10
 - functools의 [lru_cache()](https://velog.io/@ddyy094/LRULeast-Recently-Used-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%9D%B4%EB%9E%80) 데코레이터 사용하면 중복 함수 호출 줄일 수 있음 (@functools.lru_cache( ))
 
     ```python
+    ##데코레이터 예시 1
+
     def deco(func):
     def wrapper():
         print(func.__name__, '함수 시작')  # __name__으로 함수 이름 출력
@@ -123,7 +122,7 @@ last_modified_at: 2023-07-10
     ```
 
     ```python
-    ##데코레이터 2
+    ## 데코레이터 예시 2
     import time
     def clock(func):
         #decorator 호출 시 수행될 함수
@@ -144,5 +143,4 @@ last_modified_at: 2023-07-10
         return age+2
 
     print(koreanAge(25))
-
     ```
