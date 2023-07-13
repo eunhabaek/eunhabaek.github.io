@@ -1,4 +1,3 @@
-
 ---
 title: "Python (4)"
 excerpt: "파이썬의 클래스와 인스턴스"
