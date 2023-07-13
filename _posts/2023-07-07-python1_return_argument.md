@@ -13,7 +13,7 @@ last_modified_at: 2023-07-07
 ## Return ##
 - 함수 호출한 곳으로 돌아감
 - 호출 시 데이터 가져갈 수 있음
-- 파이썬은 여러개 데이터 ,로 나열하면 tuple로 간주
+- 파이썬은 여러개 데이터 , 로 나열하면 tuple로 간주
 - return 없으면 매개변수 등 다른 데이터를 수정
     - ex) list.sort( )
 - for 안에서 break와 비슷하게 사용 가능
@@ -24,11 +24,12 @@ last_modified_at: 2023-07-07
 - 매개변수 있는 함수에 전달 안하면 에러
 - 매개변수 자료형 명시 권장
     - ex) def add(a:int,b:int)-> int:
-        ```python
-        #매개변수 자료형 기입, UML 표기법
-        def add(a:int,b:int)-> int:
-        return a+b
-        ```
+
+    ```python
+    #매개변수 자료형 기입, UML 표기법
+    def add(a:int,b:int)-> int:
+    return a+b
+    ```
 
 
 ## 매개변수 전달 방법 (call by value call by reference)
@@ -41,8 +42,9 @@ last_modified_at: 2023-07-07
 ## 매개변수의 unpacking
 - 매개변수 여러개일때 list, tuple, set 등 한꺼번에 전달 가능 (*데이터)
 - 전달된 list, tuple, set 분할해서 매개변수에 대입
-- dict 전달시 key 대입, value 전달은 ** 붙이기
+- dict 전달시 *는 key 대입, value 전달은 ** 붙이기
 - dict 전달 시 key 이름과 매개변수 이름 동일해야 함
+
     ```python
     # 매개변수의 unpacking
     def collect(a,b):
@@ -60,12 +62,13 @@ last_modified_at: 2023-07-07
 
 ## 가변 매개변수
 - 매개변수의 개수를 정하지 않고 사용하는 매개변수
-- 매개변수 만들 시 *이용하여 이름 설정
+- 매개변수 만들 시 * 이용하여 이름 설정
 - 함수 내부에서는 매개변수들 모아 하나의 tuple 생성
 - 가변 매개변수 앞에 있는 매개변수 대입시 매개변수 이름과 함께 대입하면 에러
 - 가변 매개변수 뒤에 있는 매개변수 대입 시에는 반드시 매개면수 이름과 함께 대입해야 함
 - **는 dict로 인식
 - 함수 호출 시 존재하지 않는 매개변수 **이용해 대입하면 dict, dict는 가장 마지막 매개변수로
+
     ```python
     def merge(arg1,*arg2,arg3,**arg4):
     print(arg1)
