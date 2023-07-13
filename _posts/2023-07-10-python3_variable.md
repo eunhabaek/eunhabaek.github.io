@@ -6,10 +6,10 @@ categories:
   - python
 tags:
   - python
-last_modified_at: 2023-07-07
+last_modified_at: 2023-07-10
 ---
 
-**파이썬 변수**
+## **파이썬 변수** ##
 
 - global
     - 함수 외부에서 생성, 전역 사용
@@ -23,19 +23,26 @@ last_modified_at: 2023-07-07
     - **함수 내부**에 생성, 내부에서만 사용
     - c, java는 { }가 로컬 기준
 
-nonlocal과 global
+## nonlocal과 global ##
 
 - 함수 내부에서 외부 데이터 사용하기 위해 필요
 - 함수 내부에 nonlocal이나 global이라는 키워드와 함께 변수 이름을 기재하면 함수 내부에서 해당 변수로 지역변수를 만들 수 없음
 - nonlocal은 자신의 외부 함수에서 데이터를 찾고, global은 최상위에서 찾음
 - 변수 이름 겹치지 않게 해야 함 → 예전에 g_, m_, _ 사용
 
-**Closure**
+    ```python
+    ```
+
+## **Closure** ##
 
 - 함수 내부 함수를 리턴해서 함수 외부에서 함수 내부 데이터 변경 목적으로 사용
 - 객체 지향에서는 전역 변수를 권장하지 않음⇒ closure 이용하여 함수 내부-외부 데이터 공유
 
-**프로그래밍 로직**
+    ```python
+    ```
+
+
+## **프로그래밍 로직** ##
 
 - business logic: 업무 관련
     - 기능적
@@ -44,7 +51,10 @@ nonlocal과 global
     - 비기능적
     - 로그인, 로깅
 
-**데코레이터(=intercepter) ⇒ for AOP (aspect of program)**
+    ```python
+    ```
+
+## **데코레이터(=intercepter) ⇒ for AOP (aspect of program)** ##
 
 - 비즈니스 로직을 수행하기 전이나 후에 해야 할 일을 메서드로 만들어 두고, @함수이름으로 대신하도록 함
 - business logic/common concern 분리하거나 생성 작업이 복잡하거나 알 필요 없는 경우 사용
@@ -55,3 +65,6 @@ nonlocal과 global
 - decorator에 전달된 매개변수를 이용하여 함수 이름이나 인수, 리턴 확인 가능함
 - 함수 호출할 때 마다 실행시간, 인수, 매개변수 , 리턴 값 출력
 - functools의 [lru_cache()](https://velog.io/@ddyy094/LRULeast-Recently-Used-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%9D%B4%EB%9E%80) 데코레이터 사용하면 중복 함수 호출 줄일 수 있음 (@functools.lru_cache( ))
+
+    ```python
+    ```
