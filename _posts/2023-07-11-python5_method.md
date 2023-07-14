@@ -9,8 +9,7 @@ tags:
 last_modified_at: 2023-07-11
 ---
 
-
-**Accessor 접근자 메서드**
+## **Accessor 접근자 메서드** ##
 
 - 객체지향에서는 인스턴스로 속성에 직접 접근/수정을 지양⇒ (인스턴스.속성 X)
 - 속성 접근 메서드 이용하여 속성의 값을 가져다 사용 후 수정함
@@ -58,6 +57,108 @@ last_modified_at: 2023-07-11
 
 
 
+## **생성자와 소멸자** ##
+
+#### constructor (생성자) ####
+- __init__  (고정)
+- 인스턴스 생성 시 호출하는 메서드
+- 직접 생성하지 않아도 메모리 할당 하고, 참조 리턴하는 매개변수가 self만 있는 생성자 제공
+- 직접 생성자 만들면 제공되는 생성자 소멸
+- 생성자 만드는 이유: 처음부터 속성을 만들거나 속성을 원하는 값으로 초기화
+- 매개변수 이용해서 초기화 시 기본 값 없는 경우 매개변수 필수 입력 필요함
+##### destructor (소멸자) ####
+- 인스턴스 소멸 시 호출되는 메서드
+- __del__
+- 소멸자는 매개변수 self 이외에 불가
+- 소멸자 만드는 이유: **외부 자원**의 정리 (파일 핸들링, 네트워크, DB⇒ 정리 및 예외처리 필요함)
+- 인스턴스의 소멸:
+    - 인스턴스 차지하던 공간은 garbage collection이 정리
+    - reference count라는 개념으로 정리 대상 결정
+        - 한 공간을 참조하는 변수의 개수
+        - 참조하던 변수 소멸/null 대입 시 감소
+        - count=0 이면 정리 대상
+        - sys.getrefcount(인스턴스명) 으로 확인 가능 →  1 증가되어 나옴
+
+    ```python
+    #클래스 생성
+    class Animals():
+
+        #생성자 - 인스턴스 생성할 때 호출
+        def __init__(self,name="noname"): #속성에 대입할 매개변수="기본 값"
+            print("인스턴스 생성")
+
+            #생성자 안에 속성 생성하면 처음부터 속성 소유 가능
+
+            self.default="기본 값" #default 값은 "기본 값"으로 밖에 초기화 안 됨
+            self.name=name #매개변수 이용해서 속성 다르게 대입 가능
+
+        #소멸자 - 인스턴스 삭제될 때 호출
+        def __del__(self):
+            print("인스턴스 소멸")
+
+        def display(self): #메서드의 첫번째 매개변수는 기본적으로 self이며 실제 호출할 땐 생략
+            print("인스턴스 메서드 출력") #인스턴스 없이는 호출 불가
+
+
+        anm=Animals("cat") #인스턴스 생성, 참조 카운트 1
+
+        #메서드 호출
+        Animals.display(anm) #unbound 호출
+        anm.display() #bound 호출
+
+        print(anm.name)
+
+        anm=None #인스턴스 소멸되어 소멸자 호출
+    ```        
+
+## **Static method, class method** ##
+- 클래스 이용해서 호출하는 메서드
+- 인스턴스 생성 없이 사용하기 위한 메서드
+- 클래스 속성에만 접근 가능함
+
+#### static method ####
+- @staticmethod 라는 decorator 이용해서 생성
+- self 필요없음
+- 인스턴스가 소유하는 속성 접근 불가
+#### class method ####
+ @classmethod 라는 decorator 이용해서 생성
+- self 필요없음
+- class 인스턴스 대입받기 위한 매개변수 1개 필요
+- 인스턴스가 소유하는 속성 접근 불가
+
+```python
+#일련번호 인스턴스 생성
+class Nums():
+    # 클래스 속성
+    auto_increment = 0
+
+    # 클래스 속성과 생성자를 이용한 일련번호
+    def __init__(self):
+        Nums.auto_increment+=1
+        self.no=Nums.auto_increment
+
+    @staticmethod #인스턴스 만들 필요 없음
+    def staticmd():
+        print("static method")
+
+    @classmethod
+    def classmd(cls):
+        print(cls.auto_increment)
+
+
+num1=Nums()
+print(num1.no) #1 출력
+
+num2=Nums()
+print(num2.no) #2 출력
+
+#static method 호출
+Nums.staticmd()
+
+#class method 호출
+Nums.classmd()
+```
+
 
 ## **Property** ##
 - 속성과 유사하나 다름
@@ -66,43 +167,57 @@ last_modified_at: 2023-07-11
 - ⇒ decorator 이용해서도 생성 가능
 
 
-  ```python
-  ```
+    ```python
+  #property 직접 작성
+    class Prop1:
+        def __init__(self,name="noname"):
+            self.__name=name
+            self.age=27
 
-**생성자와 소멸자**
+        #접근자 메서드
+        def getName(self):
+            print("name의 getter 호출")
+            return self.__name
 
-- constructor (생성자)
-    - __init__  (고정)
-    - 인스턴스 생성 시 호출하는 메서드
-    - 직접 생성하지 않아도 메모리 할당 하고, 참조 리턴하는 매개변수가 self만 있는 생성자 제공
-    - 직접 생성자 만들면 제공되는 생성자 소멸
-    - 생성자 만드는 이유: 처음부터 속성을 만들거나 속성을 원하는 값으로 초기화
-    - 매개변수 이용해서 초기화 시 기본 값 없는 경우 매개변수 필수 입력 필요함
-- destructor (소멸자)
-    - 인스턴스 소멸 시 호출되는 메서드
-    - __del__
-    - 소멸자는 매개변수 self 이외에 불가
-    - 소멸자 만드는 이유: **외부 자원**의 정리 (파일 핸들링, 네트워크, DB⇒ 정리 및 예외처리 필요함)
-    - 인스턴스의 소멸:
-        - 인스턴스 차지하던 공간은 garbage collection이 정리
-        - reference count라는 개념으로 정리 대상 결정
-            - 한 공간을 참조하는 변수의 개수
-            - 참조하던 변수 소멸/null 대입 시 감소
-            - count=0 이면 정리 대상
-            - sys.getrefcount(인스턴스명) 으로 확인 가능 →  1 증가되어 나옴
-            
+        def setName(self,name):
+            print("name의 setter 호출")
+            self.__name=name
 
-**Static method, class method**
+        #property 생성
+        #name 호출하면 getName 메서드 호출, name 값 대입하면 setName 메서드 호출
+        #name=property(fget=getName, fset=setName)
 
-- 클래스 이용해서 호출하는 메서드
-- 인스턴스 생성 없이 사용하기 위한 메서드
-- 클래스 속성에만 접근 가능함
-- static method
-    - @staticmethod 라는 decorator 이용해서 생성
-    - self 필요없음
-    - 인스턴스가 소유하는 속성 접근 불가
-- class method
-    - @classmethod 라는 decorator 이용해서 생성
-    - self 필요없음
-    - class 인스턴스 대입받기 위한 매개변수 1개 필요
-    - 인스턴스가 소유하는 속성 접근 불가
+
+    pro1=Prop1()
+
+    print(pro1.age)
+    print(pro1.__name)
+
+    #property 이용한 getter setter 호출
+    pro1.name="eunha"
+    print(pro1.name)
+    ```
+
+    ```python
+    #property decorator 이용
+    class Prop2:
+        def __init__(self,name="noname"):
+            self.__name=name
+
+        #접근자 메서드
+        @property
+        def name(self):
+            print("name의 getter 호출")
+            return self.__name
+        @name.setter
+        def name(self,name):
+            print("name의 setter 호출")
+            self.__name=name
+
+    pro2=Prop2()
+
+    #property 이용한 getter setter 호출
+    pro2.name="eunha"
+    print(pro2.name)
+
+    ```
