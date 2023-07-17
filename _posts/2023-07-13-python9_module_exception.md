@@ -9,8 +9,6 @@ tags:
 last_modified_at: 2023-07-13
 ---
 
-Exception handing
-
 ## 오류의 종류 ##
 1. 컴파일 오류
     - 문법적 오류로 실행되지 않음
