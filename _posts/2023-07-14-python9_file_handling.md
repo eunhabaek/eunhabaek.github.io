@@ -1,5 +1,5 @@
 ---
-title: "Python (10)"
+title: "Python (9)"
 excerpt: "파이썬의 파일 핸들링"
 
 categories:
@@ -9,53 +9,56 @@ tags:
 last_modified_at: 2023-07-14
 ---
 ## 파일 핸들링 ##
-1. 파일 처리과정
-    - open이라는 함수 이용해서 운영 체제에게 파일 사용 할 수 있도록 요청
-    - 파일 존재하면 참조 리턴, 존재하지 않으면 예외 발생
-    - 파일에 대한 읽고 쓰기 작업을 운영체제가 수행하면 결과 리턴
-    - close 함수 이용하여 파일 닫기
-2. 파일 쓰기작업
-    - open 함수에 2, 3개 매개변수 대입하여 파일 열기
-        - 첫번째 매개변수는 경로, 두번째는 ‘w’, 세번째는 인코딩 방식(encoding=”utf8”)
-    - 기록할 때 파일 참조 변수 이용하여 write 호출
-    - \n 포함된 컬렉션의 경우는 weitelines나 join이용해서 줄 단위 기록이 가능
-3. 파일 읽기 작업
-    - open함수에 1개나 2개의 매개변수 대입해서 파일 열기
-        - 첫번째 매개변수는 파일 경로, 두번째 매개변수는 ‘r’
-    - read( ) 입력 시 전체
-    - readline( ) 줄 단위
-    - readlines( ) 줄 단위로 읽어서 리스트로 리턴
-    - read(정수)는 정수 바이트 만큼 읽기
-4. 현재 작업 디렉토리 확인 및 변경
-    - os.getcwd( ) : 현재 경로 확인
-    - os.chdir(”path”) : 경로 이동
-        ```python   
-        import os
+#### 1. 파일 처리과정
+- open이라는 함수 이용해서 운영 체제에게 파일 사용 할 수 있도록 요청
+- 파일 존재하면 참조 리턴, 존재하지 않으면 예외 발생
+- 파일에 대한 읽고 쓰기 작업을 운영체제가 수행하면 결과 리턴
+- close 함수 이용하여 파일 닫기
 
-        print(os.getcwd()) #현재 작업디렉토리 경로 확인
+#### 2. 파일 쓰기작업
+- open 함수에 2, 3개 매개변수 대입하여 파일 열기
+    - 첫번째 매개변수는 경로, 두번째는 ‘w’, 세번째는 인코딩 방식(encoding=”utf8”)
+- 기록할 때 파일 참조 변수 이용하여 write 호출
+- \n 포함된 컬렉션의 경우는 weitelines나 join이용해서 줄 단위 기록이 가능
 
-        try:
-            #파일 쓰기
-            file=open('./data/test.txt','w',encoding="utf8")
-            file.write("hello") #file에 내용 쓰기
+#### 3. 파일 읽기 작업
+- open함수에 1개나 2개의 매개변수 대입해서 파일 열기
+    - 첫번째 매개변수는 파일 경로, 두번째 매개변수는 ‘r’
+- read( ) 입력 시 전체
+- readline( ) 줄 단위
+- readlines( ) 줄 단위로 읽어서 리스트로 리턴
+- read(정수)는 정수 바이트 만큼 읽기
 
-            lines=["cats\n","dogs\n","monkeys\n","안녕"]
-            file.writelines(lines)
+#### 4. 현재 작업 디렉토리 확인 및 변경
+- os.getcwd( ) : 현재 경로 확인
+- os.chdir(”path”) : 경로 이동
+    ```python   
+    import os
 
-            #파일 읽기
-            with open('./data/test.txt','r',encoding="utf8") as file:
+    print(os.getcwd()) #현재 작업디렉토리 경로 확인
 
-                #줄단위로 읽기
-                for line in file:
-                    print(line)
-                    print()
+    try:
+        #파일 쓰기
+        file=open('./data/test.txt','w',encoding="utf8")
+        file.write("hello") #file에 내용 쓰기
 
-            #content=file.read() #file 내용 전체 읽기
-            #print(content)
+        lines=["cats\n","dogs\n","monkeys\n","안녕"]
+        file.writelines(lines)
 
-        except Exception as e: #예외 처리
-            print("파일 읽기 중 에러: ",e)
-        ```
+        #파일 읽기
+        with open('./data/test.txt','r',encoding="utf8") as file:
+
+            #줄단위로 읽기
+            for line in file:
+                print(line)
+                print()
+
+        #content=file.read() #file 내용 전체 읽기
+        #print(content)
+
+    except Exception as e: #예외 처리
+        print("파일 읽기 중 에러: ",e)
+    ```
 ## with 절 ##
 - with open( ) as 파일변수:
     - open의 리턴 값을 파일 변수로 저장, with 절 끝나면 예외 상관 없이 자동 close( ) 호출
