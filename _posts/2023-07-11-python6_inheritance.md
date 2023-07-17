@@ -14,7 +14,38 @@ last_modified_at: 2023-07-11
 - 제공되는 연산자의 기능을 변경하여 사용
 - 파이썬은 각 연산자에 오버로딩 가능한 메서드 제공
 - 매개변수 개수 변경은 불가
-- +: __add__ , =: __eq__
+- +: \_\_add\_\_ , =: \_\_eq\_\_
+
+
+    ```python
+    #속성 생성제한, 연산자 오버로딩
+    class Blank:
+        #name과 age, __no 속성만 사용 가능하도록
+        __slots__=["name","age","__no"]
+        def __init__(self,name):
+            self.name=name
+            self.__no=1 #private 속성, 메서드 통해서만 접근 가능
+
+        #연산자 overloading
+        def __add__(self,other):
+            return self.name+other.name
+
+        def __eq__(self, other):
+            return self.name==other.name
+
+    bnk1=Blank("eunha")
+    bnk2=Blank("eunha")
+    bnk3=bnk1
+
+    print(bnk1+bnk2) # 오버로딩 하지 않으면 에러
+
+    print(bnk1==bnk2) #원래 false이나, 오버로딩으로 인해 true
+    print(bnk1 is bnk2) #false
+
+    print(bnk1==bnk3) #true
+    print(bnk1 is bnk3) #ture    
+
+    ```
 
 **Inheritance (상속)**
 
