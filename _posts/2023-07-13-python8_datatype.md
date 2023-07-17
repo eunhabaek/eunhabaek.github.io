@@ -222,18 +222,54 @@ last_modified_at: 2023-07-13
 - MVC
     - model, view,  controller
     - 모델이 변해도 모델 X
-- Microservice
-    - CI/CD
-
 
         ```python
+        #dict를 이용한 mvc -> 속성명 바꿔도 출력에 문제 없음
+        #but code sense 적용 안됨
+        dt2=[{"name":"eunha","tel":"2409"},{"name":"crystal","tel":"5705"}]
+
+        for data in dt2:
+            for key in data:
+                print(key,":",data[key])
         ```
 
+        ```python
+        #이차원 배열 대신 dict는 key 이용 접근
+        array2=[{"name":"그룹1","data":group1},{"name":"그룹2","data":group2}]
+
+        for dic in array2:
+        print(dic.get("name"),end=": ")
+        for elem in dic.get("data"):
+            print(elem, end="\t")
+        print()
+        ```
 
 ## **List comprehension** ##
 
 - 반복 가능한 객체 이용하여 새로운 반복 가능한 객체 축약하여 생성
 - map, filter (with if)보다 빠름
 
-            ```python
-            ```
+    ```python
+    #list comprehension - 두개 리스트 이용
+    li1=[1,2,3]
+    li2=[4,5,6,7]
+
+    re=[x*y for x in li1 for y in li2]
+    print(re)
+    ```
+    
+    ```python
+    animals=["cat","dog","fig","lion","rabbit"]
+    
+    #글자 수 4 이상 추출하기
+    #list comprehension - with if
+    re2=list(x for x in animals if len(x)>=4)
+
+    #글자 수 4이상 5 미만 추출하기
+    #list comprehension - with if 2개 또는 and, or 사용 가능
+    re3=list(x for x in animals if len(x)>=4 if len(x)<5)
+    
+    #글자 수 4자리 이상 ...붙여서 출력  
+    #list comprehension - with if else 문 활용
+    re4=list(x if len(x)<4 else x[0:3]+"..." for x in animals)
+    ```

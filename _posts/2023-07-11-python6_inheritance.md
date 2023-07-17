@@ -69,33 +69,33 @@ last_modified_at: 2023-07-11
         - class명.mro( )
     - 다중상속 시  super는 mro에서 첫번째 클래스의 인스턴스를 의미하는데 다른 클래스의 인스턴스를 사용하고자 하는 경우는 super(클래스명,self)를 대입
 
-    ```python
-    #상속 예시
+        ```python
+        #상속 예시
 
-    class Sup:
-        def __init__(self):
-            self.name="noname"
-        def method(self):
-            print("상위 클래스의 메서드")
+        class Sup:
+            def __init__(self):
+                self.name="noname"
+            def method(self):
+                print("상위 클래스의 메서드")
 
-    class Sub(Sup):
-        #하위 클래스에서
-        def __init__(self):
-            super().__init__() #상속에서 중요함
-            self.score=80
-        def method(self): #메서드 오버라이딩
-            super().method() #상위 클래스의 메서드 호출
-            print("메서드 오버라이딩")
+        class Sub(Sup):
+            #하위 클래스에서
+            def __init__(self):
+                super().__init__() #상속에서 중요함
+                self.score=80
+            def method(self): #메서드 오버라이딩
+                super().method() #상위 클래스의 메서드 호출
+                print("메서드 오버라이딩")
 
-        def subMethod(self):
-            print("하위 클래스의 메서드")
+            def subMethod(self):
+                print("하위 클래스의 메서드")
 
-    #sub의 인스턴스 생성해서 필요한 메서드 호출
-    sub=Sub()
-    sub.subMethod()
-    sub.method()
-    print(sub.name)
-    ```
+        #sub의 인스턴스 생성해서 필요한 메서드 호출
+        sub=Sub()
+        sub.subMethod()
+        sub.method()
+        print(sub.name)
+        ```
 
 - abstract(추상)
     - 추상 메서드
@@ -110,27 +110,26 @@ last_modified_at: 2023-07-11
             - 템플릿 메서드 패턴 구현⇒Interface(Protocol)
             - 여러 클래스의 공통 인터페이스, 명칭 생성
 
+        ```python
+        #추상 클래스 생성
+        import abc
+        class AbstractClass(metaclass=abc.ABCMeta):
+            #추상 메서드 - 내용 없음, 하위 클래스에서 구현하여 사용
+            @abc.abstractmethod
+            def method(self):
+                pass
 
-    ```python
-    #추상 클래스 생성
-    import abc
-    class AbstractClass(metaclass=abc.ABCMeta):
-        #추상 메서드 - 내용 없음, 하위 클래스에서 구현하여 사용
-        @abc.abstractmethod
-        def method(self):
-            pass
+        #추상클래스 상속０
+        class Sub(AbstractClass):
+            def __init__(self):
+                print('인스턴스 생성')
+            def method(self): #추상 메서드 반드시 implementation 해야함
+                print("추상 메서드 구현")
 
-    #추상클래스 상속０
-    class Sub(AbstractClass):
-        def __init__(self):
-            print('인스턴스 생성')
-        def method(self): #추상 메서드 반드시 implementation 해야함
-            print("추상 메서드 구현")
-
-    #instance=AbstractClass() #추상클래스는 인스턴스 생성 불가
-    instance=Sub() #추상클래스 implementation 하지 않으면 에러
-    instance.method()
-    ```
+        #instance=AbstractClass() #추상클래스는 인스턴스 생성 불가
+        instance=Sub() #추상클래스 implementation 하지 않으면 에러
+        instance.method()
+        ```
 
 ## 특별한 기능 ##
 
@@ -144,6 +143,24 @@ last_modified_at: 2023-07-11
 3. enumerate
     - iterator 객체에 적용하면 인덱스와 데이터를 순차적으로 접근할 수 있도록 해주는 함수
     - 인덱스와 데이터 동시 사용
+        ```python
+        #2차원 배열 생성
+        group1=["orange","pink","blue"]
+        group2=["round","star","square"]      
+        array1=[group1,group2] #list의 list
+        
+        #list는 index를 이용 접근 => 내부 배열명 뽑기 불편함, 배열 추가 시 코드 고쳐야 함
+
+        for idx,data in enumerate(array1):
+            if idx==0:
+                print("group1: ",end="\t")
+            else:
+                print("group2: ",end="\t")
+            for elem in data:
+                print(elem, end="\t")
+            print()
+        ```
+    
 4. generator
     - iterator의 특수 형태로 yield 키워드 조건 이용하여 데이터 하나씩 리턴
 5. coroutine
