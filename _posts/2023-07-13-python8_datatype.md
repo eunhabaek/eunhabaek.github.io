@@ -37,6 +37,7 @@ last_modified_at: 2023-07-13
 - dir(str)로 확인가능
 - count( ): substring 몇개인지
 - find( ): index( )와 동일한데 못 찾으면 -1
+    
     ```python
     #GCCG 찾기
     problem="GDKSFSGCCGCCGGGGASADGCCGCCGASDAGA"
