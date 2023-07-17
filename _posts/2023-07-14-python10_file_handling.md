@@ -29,7 +29,33 @@ last_modified_at: 2023-07-14
 4. 현재 작업 디렉토리 확인 및 변경
     - os.getcwd( ) : 현재 경로 확인
     - os.chdir(”path”) : 경로 이동
+        ```python   
+        import os
 
+        print(os.getcwd()) #현재 작업디렉토리 경로 확인
+
+        try:
+            #파일 쓰기
+            file=open('./data/test.txt','w',encoding="utf8")
+            file.write("hello") #file에 내용 쓰기
+
+            lines=["cats\n","dogs\n","monkeys\n","안녕"]
+            file.writelines(lines)
+
+            #파일 읽기
+            with open('./data/test.txt','r',encoding="utf8") as file:
+
+                #줄단위로 읽기
+                for line in file:
+                    print(line)
+                    print()
+
+            #content=file.read() #file 내용 전체 읽기
+            #print(content)
+
+        except Exception as e: #예외 처리
+            print("파일 읽기 중 에러: ",e)
+        ```
 ## with 절 ##
 - with open( ) as 파일변수:
     - open의 리턴 값을 파일 변수로 저장, with 절 끝나면 예외 상관 없이 자동 close( ) 호출
@@ -52,9 +78,30 @@ last_modified_at: 2023-07-14
         - 파일 객체를 csv.reader 객체에 대입하면 줄 단위로 읽을 수 있는 reader  객체 리턴, for로 순회하면 각 줄을 list로 변환해 줌
         - 읽거나 기록 할 때 delimiter 옵션 이용하여 , 아닌 다른 구분자 설정 가능
     3. pandas 같은 외부 라이브러리 이용⇒데이터 프레임 만들어 줌, but heavy
+
+        ```python
+        #csv 읽기
+        #텍스트로 읽어서 split 이용
+        data=[]
+        with open('./data/경기도_이천시_지역화폐발행 및 이용현황_20221015.csv','r') as csv1:
+            for line in csv1:
+                ar=line.split(",")
+                data.append(ar)
+        print(data)
+        ```
     
 - csv 쓰기:
     1. csv.writer에 파일 객체 대입하여 csv 파일 쓰기 가능
+
+        ```python
+        #csv 쓰기
+        import csv
+        with open('./data/test_0714.csv','w') as wt:
+            wr=csv.writer(wt)
+            wr.writerow(["cat","dog","monkey"])
+            wr.writerow(["mouse","rabbit","lion"])
+        ```
+    
 - binary 파일과 sericalizable
     - 바이너리 파일
         - 문자열 직접 기록 불가, encode( ) 호출하여 바이트 단위로 기록
@@ -73,19 +120,58 @@ last_modified_at: 2023-07-14
         - 읽기 방법:
             - pickle.load(파일 객체) : 객체 1개 읽기
             - pickle.loads(파일 객체): 객체 한번에 읽기
+
+                ```python
+                import pickle
+                #인스턴스 파일 생성
+                try:
+                    #serializing
+                    with open("./data/data.date","wb") as file:
+                        pickle.dump(dto1,file)
+
+                    # 만들어진 파일 deserializing 하지 않으면 읽지 못함
+                    with open("./data/data.date", "rb") as file:
+                        result=pickle.load(file)
+                        print(result)
+
+                except Exception as e:
+                    print(e)
+                ```
+
 ## 파일 압축 기능 ##
 - zip 압축
     - zipfile 모듈의 ZipFile 함수 이용하여 인스턴스 생성
     - 파일 경로를 list로 만든 후 write 함수 대입하면 압축
     - zip 해제는 extractcall 함수 호출
+        ```python
+        ##zipfile 압축/해제
+        import zipfile
+
+        #압축할 데이터 리스트 만들기
+        filelst=['./data/test_0714.bin','./data/test_0714.csv']
+
+        #zip 압축하기
+        with zipfile.ZipFile('./data/test_0714.zip','w') as myzipf:
+            for f in filelst:
+                myzipf.write(f)
+        #zip 압축 해제
+        zipfile.ZipFile('/data/test_0714.zip').extractall()
+        ```
 - tar 압축 (리눅스 표준)
 
 ## 로그파일 읽기 ##
 - Apache Tomcat의 로그 파일
     - 180.76.15.152 - - [15/Nov/2015:09:12:04 +0000] "GET / HTTP/1.1" 200 6812
     - 공백 9개로 분리, 실제 데이터는 10개
-        
-        1. 접속한 IP
-        
-        1. 응답코드 200이면 성골
-        2. 트래픽=전송량
+        ```python
+        #ip별 트래픽 수
+        logs={}
+        with open('./data/log.txt','r') as log:
+            for i in log:
+                sub=i.strip("\n").split(' ')
+                try:
+                    logs[sub[0]]=logs.get(sub[0],0)+int(sub[9])
+                except Exception as e:
+                    print(e)
+        print(logs)
+        ```
