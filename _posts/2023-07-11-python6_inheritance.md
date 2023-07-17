@@ -9,13 +9,12 @@ tags:
 last_modified_at: 2023-07-11
 ---
 
-**Operator overloading**
+## Operator overloading ##
 
 - 제공되는 연산자의 기능을 변경하여 사용
 - 파이썬은 각 연산자에 오버로딩 가능한 메서드 제공
 - 매개변수 개수 변경은 불가
 - +: \_\_add\_\_ , =: \_\_eq\_\_
-
 
     ```python
     #속성 생성제한, 연산자 오버로딩
@@ -47,8 +46,7 @@ last_modified_at: 2023-07-11
 
     ```
 
-**Inheritance (상속)**
-
+## Inheritance (상속) ##
 - 상위 클래스(super, base)의 모든 것을 하위 클래스(sub, drived)가 물려 받는 것
 - 다중 상속 지원
 - 상속 사용 이유:
@@ -70,6 +68,35 @@ last_modified_at: 2023-07-11
     - 다중 상속 시 메서드 찾는 순서
         - class명.mro( )
     - 다중상속 시  super는 mro에서 첫번째 클래스의 인스턴스를 의미하는데 다른 클래스의 인스턴스를 사용하고자 하는 경우는 super(클래스명,self)를 대입
+
+    ```python
+    #상속 예시
+
+    class Sup:
+        def __init__(self):
+            self.name="noname"
+        def method(self):
+            print("상위 클래스의 메서드")
+
+    class Sub(Sup):
+        #하위 클래스에서
+        def __init__(self):
+            super().__init__() #상속에서 중요함
+            self.score=80
+        def method(self): #메서드 오버라이딩
+            super().method() #상위 클래스의 메서드 호출
+            print("메서드 오버라이딩")
+
+        def subMethod(self):
+            print("하위 클래스의 메서드")
+
+    #sub의 인스턴스 생성해서 필요한 메서드 호출
+    sub=Sub()
+    sub.subMethod()
+    sub.method()
+    print(sub.name)
+    ```
+
 - abstract(추상)
     - 추상 메서드
         - 내용 없고 이름만 존재, 하위 클래스에서 구현하여 사용
@@ -83,7 +110,29 @@ last_modified_at: 2023-07-11
             - 템플릿 메서드 패턴 구현⇒Interface(Protocol)
             - 여러 클래스의 공통 인터페이스, 명칭 생성
 
-**특별한 기능**
+
+    ```python
+    #추상 클래스 생성
+    import abc
+    class AbstractClass(metaclass=abc.ABCMeta):
+        #추상 메서드 - 내용 없음, 하위 클래스에서 구현하여 사용
+        @abc.abstractmethod
+        def method(self):
+            pass
+
+    #추상클래스 상속０
+    class Sub(AbstractClass):
+        def __init__(self):
+            print('인스턴스 생성')
+        def method(self): #추상 메서드 반드시 implementation 해야함
+            print("추상 메서드 구현")
+
+    #instance=AbstractClass() #추상클래스는 인스턴스 생성 불가
+    instance=Sub() #추상클래스 implementation 하지 않으면 에러
+    instance.method()
+    ```
+
+## 특별한 기능 ##
 
 1. delegation
     - 존재하지 않는 메서드 호출 시 처리를 위임
