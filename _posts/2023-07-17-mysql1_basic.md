@@ -30,6 +30,7 @@ docker run --name mysql -dit -e MYSQL_ROOT_PASSWORD=beh1016 -p 3306:3306  mysql
 
 ### 4. 처음 연결 시 드라이버 다운 필요
 - 드라이버 직접 다운 받아서 설정 가능
+
 ### 5. SQL 편집기 새로 생성하여 명령어 작성 가능
 
 ## SQL 기본 명령어
