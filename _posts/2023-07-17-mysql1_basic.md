@@ -30,8 +30,9 @@ docker run --name mysql -dit -e MYSQL_ROOT_PASSWORD=beh1016 -p 3306:3306  mysql
 
 ### 4. 처음 연결 시 드라이버 다운 필요
 - 드라이버 직접 다운 받아서 설정 가능
-### 5. SQL 편집기 새로 생성하여 명령어 작성
-- SQL 기본 명령어
+### 5. SQL 편집기 새로 생성하여 명령어 작성 가능
+
+## SQL 기본 명령어
 - 데이터베이스 목록 보기
     
     ```sql
@@ -67,3 +68,24 @@ docker run --name mysql -dit -e MYSQL_ROOT_PASSWORD=beh1016 -p 3306:3306  mysql
     ```sql
     DESC 테이블명;
     ```
+
+## SQL 작성 규칙
+
+- 대소문자 구분
+    - 예약어는 대소문자 구분하지 않음
+    - 테이블명에서는 대소문자 구분
+    - 컬럼명은 대소문자 구분하지 않음
+- 명령문 끝은 ;로 종료
+
+## SQL 종류
+
+- DQL(데이터 쿼리언어, 조회)
+    - SELECT
+- DDL(데이터 정의어)
+    - CREATE, ALTER, DROP, TRUNCATE, RENAME
+- DML(데이터 조작어)
+    - INSERT, UPDATE, DELETE
+- TCL(트랜젝션 조작어)
+    - COMMIT, ROLLBACK, SAVEPOINT
+- DCL(데이터 제어어)
+    - GRANT, REVOKE
