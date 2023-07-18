@@ -5,7 +5,7 @@ excerpt: "Docker 에서 MySQL 실행하기"
 categories:
   - database
 tags:
-  - SQL
+  - MySQL
 last_modified_at: 2023-07-17
 ---
 
