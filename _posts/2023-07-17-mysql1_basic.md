@@ -17,18 +17,53 @@ last_modified_at: 2023-07-17
 docker run --name mysql -dit -e MYSQL_ROOT_PASSWORD=beh1016 -p 3306:3306  mysql
 ```
 
-### 2. dbeaver 접속 →파일 새로 만들기→dbeaver→ 데이터베이스 연결→ MySQL 선택
+### 2. dbeaver 접속 → 파일 새로 만들기 → dbeaver 선택 → 데이터베이스 연결 → MySQL 선택
     
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f9ae345-6098-4da1-855b-0047f326b3ff/Untitled.png)
+![figure1](/figures/mysql1.png)
     
 ### 3. 접속 정보 작성
 - serverhost=ip 정보 혹은 localhost
 - port 기본 설정은 3306
 - username, password
-    
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97813d07-c781-4331-9646-4500a0de01bf/Untitled.png)
-        
+
+![figure2](/figures/mysql2.png)   
 
 ### 4. 처음 연결 시 드라이버 다운 필요
 - 드라이버 직접 다운 받아서 설정 가능
 ### 5. SQL 편집기 새로 생성하여 명령어 작성
+- SQL 기본 명령어
+- 데이터베이스 목록 보기
+    
+    ```sql
+    show databaes;
+    ```
+    
+- 데이터베이스 생성
+    
+    ```sql
+    creat database db명;
+    ```
+    
+- 데이터베이스 삭제
+    
+    ```sql
+    drop database db명;
+    ```
+    
+- 데이터베이스 사용하기
+    
+    ```sql
+    use db명;
+    ```
+    
+- 데이터베이스 테이블 목록 보기
+    
+    ```sql
+    show tables;
+    ```
+    
+- 테이블 구조 확인 명령어 
+    
+    ```sql
+    DESC 테이블명;
+    ```
