@@ -1,5 +1,5 @@
 ---
-title: "SQL DXL (1) "
+title: "SQL DQL (1) "
 excerpt: "MySQL의 SELECT, ORDER BY, WHERE 절"
 
 categories:
@@ -9,7 +9,7 @@ tags:
 last_modified_at: 2023-07-17
 ---
 
-## SELECT
+## SELECT절
 #### 1. SELECT절의 구조
 
 ```sql
@@ -91,7 +91,7 @@ FROM 테이블명;
 - **ASC**ENDING(오름차순)
     - 디폴트값(생략가능)
     - 숫자, 문자, 날짜는 작은 것에서 큰 것, Null은 가장 나중
-- **DES**CENDING(내림차순)→DESC
+- **DESC**ENDING(내림차순)→DESC
     
     ```sql
     SELECT *
@@ -139,6 +139,7 @@ FROM 테이블명;
         FROM tCity
         WHERE BINARY(metro) ='y'; 
         ```
+
 #### WHERE절의 활용        
 - NULL 조회
     - NULL : 데이터 없거나 아직 알려지지 않음
@@ -202,8 +203,8 @@ FROM 테이블명;
             WHERE joindate LIKE '_____10%'
             ```
             
-        - [글자 나열]: 나열된 글자 중 하나
-        - [^글자 나열]: 나열된 글자 가 아닌
+        - \[글자 나열\]: 나열된 글자 중 하나
+        - \[^글자 나열\]: 나열된 글자 가 아닌
     - 와일드 카드 문자 검색 시 ESCAPE 이용
         
         ```sql
