@@ -3,7 +3,7 @@ title: "Python (3)"
 excerpt: "파이썬의 전역/지역 변수와 데코레이터"
 
 categories:
-  - python
+  - basic
 tags:
   - python
 last_modified_at: 2023-07-10

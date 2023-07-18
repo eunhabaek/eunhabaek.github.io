@@ -3,7 +3,7 @@ title: "Python (8)"
 excerpt: "파이썬의 예외처리 "
 
 categories:
-  - python
+  - basic
 tags:
   - python
 last_modified_at: 2023-07-13

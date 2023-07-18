@@ -3,7 +3,7 @@ title: "Python (5)"
 excerpt: "파이썬의 메서드"
 
 categories:
-  - python
+  - basic
 tags:
   - python
 last_modified_at: 2023-07-11

@@ -3,7 +3,7 @@ title: "Python (6)"
 excerpt: "파이썬의 상속과 특별한 기능"
 
 categories:
-  - python
+  - basic
 tags:
   - python
 last_modified_at: 2023-07-11

@@ -3,7 +3,7 @@ title: "Python (9)"
 excerpt: "파이썬의 파일 핸들링"
 
 categories:
-  - python
+  - basic
 tags:
   - python
 last_modified_at: 2023-07-14

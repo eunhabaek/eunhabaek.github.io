@@ -3,7 +3,7 @@ title: "Python (7)"
 excerpt: "파이썬의 데이터 타입"
 
 categories:
-  - python
+  - basic
 tags:
   - python
 last_modified_at: 2023-07-13

@@ -3,7 +3,7 @@ title: "Python (2)"
 excerpt: "파이썬의 함수"
 
 categories:
-  - python
+  - basic
 tags:
   - python
 last_modified_at: 2023-07-07

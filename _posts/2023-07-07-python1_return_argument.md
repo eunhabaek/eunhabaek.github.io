@@ -3,7 +3,7 @@ title: "Python (1)"
 excerpt: "파이썬의 리턴과 매개변수"
 
 categories:
-  - python
+  - basic
 tags:
   - python
 last_modified_at: 2023-07-07
