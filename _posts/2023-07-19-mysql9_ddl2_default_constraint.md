@@ -91,7 +91,7 @@ last_modified_at: 2023-07-19
     - 여러개의 속성으로 설정 시 테이블 제약조건으로 설정 필요 → 여러번 사용 불가
 - 기본 키 설정시 인덱스 생성되고 MySQL은 기본키 순서대로 저장
 - 제약조건 이름을 만드는 이유 - 관리 편리하게 하기 위함
-- 기본키는 NOT NULL이고 UNIQUE
+- 기본키는 **NOT NULL**이고 **UNIQUE**
     - 같은 값 중복 입력 하거나 입력하지 않을 시 에러
     
 
@@ -179,8 +179,8 @@ last_modified_at: 2023-07-19
 ### 7. 외래키 제약 조건의 옵션
 
 - 형식
-    - **ON DELETE**{ NO ACTION | CASCADE | SET NULL | SET DEFAULT } 4가지 중 선택
-    - **ON UPDATE**{ NO ACTION | CASCADE | SET NULL | SET DEFAULT } 4가지 중 선택
+    - **ON DELETE**\{ NO ACTION | CASCADE | SET NULL | SET DEFAULT \} 4가지 중 선택
+    - **ON UPDATE**\{ NO ACTION | CASCADE | SET NULL | SET DEFAULT \} 4가지 중 선택
 - **NO ACTION**
     - 참조하는 테이블에 변화 생겨도 아무 액션 취하지 않음
 - **CASCADE**
