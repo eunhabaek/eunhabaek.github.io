@@ -47,8 +47,8 @@ last_modified_at: 2023-07-19
 
 ### 2. 테이블의 자료형
 
-- **숫자: INT(정수), FLOAT, DOUBLE, DECIMAL(전체 자리수[,소수자리수])**
-- **문자:**
+- 숫자: **INT(정수), FLOAT, DOUBLE, DECIMAL(전체 자리수[,소수자리수])**
+- 문자:
     - **CHAR(바이트 수), VARCHAR(바이트 수), BINARY(바이트 수), VARBINARY(바이트 수)**
         - CHAR는 고정 공간, VARCHAR는 가변 공간에 저장→남는 공간 이용 가능
         - VARCHAR의 경우 데이터 변경되어 바이트 수 변경되면 Row Migration 발생
@@ -59,16 +59,16 @@ last_modified_at: 2023-07-19
     - **BLOB, LONGBLOB**
         - 대용량의 바이트 배열 저장에 사용, 파일 내용 작성에 사용
         - 파일 저장 방식은 경로 저장과 직접 저장 방식이 있음
-- **날짜와 시간**
-    - DATE: 날짜만 저장
-    - DATETIME: 날짜와 시간(초 단위) 저장
-    - TIMESTAMP: 날짜와 시간 정확히 저장
-    - TIME: 시간만 저장
-    - YEAR: 년도만 저장
+- 날짜와 시간
+    - **DATE**: 날짜만 저장
+    - **DATETIME**: 날짜와 시간(초 단위) 저장
+    - **TIMESTAMP**: 날짜와 시간 정확히 저장
+    - **TIME**: 시간만 저장
+    - **YEAR**: 년도만 저장
 - 기타
-    - BOOL: TRUE /FALSE
-    - JSON: JSON 문자열
-    - GEOMETRY: 공간 데이터
+    - **BOOL**: TRUE /FALSE
+    - **JSON**: JSON 문자열
+    - **GEOMETRY**: 공간 데이터
     
 
 ### 3. 테이블 생성 옵션
@@ -85,11 +85,11 @@ last_modified_at: 2023-07-19
     - 문자 정렬 방식
     
 
-### 4. 테이블 컬럼 추가
+### 4. 테이블 컬럼 추가 : ADD
 
 - ALTER TABLE 테이블명
     
-    ADD 컬럼명 자료형 [제약 조건];  
+    **ADD** 컬럼명 자료형 [제약 조건];  
     
     ```sql
     -- 테이블의 AGE컬럼을 정수 자료형으로 추가
@@ -99,11 +99,11 @@ last_modified_at: 2023-07-19
     
 - 이미 컬럼 있는 경우는 NULL 삽입
 
-### 5. 테이블 컬럼 삭제
+### 5. 테이블 컬럼 삭제: DROP
 
 - ALTER TABLE 테이블명
     
-    DROP 컬럼명 자료형 [제약 조건];  
+    **DROP** 컬럼명 자료형 [제약 조건];  
     
     ```sql
     -- 테이블의 AGE컬럼을 삭제
@@ -118,7 +118,7 @@ last_modified_at: 2023-07-19
 - **CHANGE**: 이름과 자료형 수정
     - ALTER TABLE 테이블명
         
-        CHANGE 기존 컬럼명 새로운 컬럼명 자료형;  
+        **CHANGE** 기존 컬럼명 새로운 컬럼명 자료형;  
         
         ```sql
         -- TEL 컬럼명을 PHONE으로 바꾸고 자료형을 정수형으로 변경
@@ -130,16 +130,16 @@ last_modified_at: 2023-07-19
     - 자료형 수정
         - ALTER TABLE 테이블명
             
-            MOFIDY 기존 컬럼명 새로운 컬럼명;  
+            **MOFIDY** 기존 컬럼명 새로운 컬럼명;  
             
     - 컬럼 순서 조정
         - ALTER TABLE 테이블명
             
-            MODIFY COLUMN  컬럼명 자료형 FIRST;  
+            **MODIFY** COLUMN  컬럼명 자료형 FIRST;  
             
         - ALTER TABLE 테이블명
             
-            MODIFY COLUMN  컬럼명1 자료형 AFTER  컬럼명2;   
+            **MODIFY** COLUMN  컬럼명1 자료형 AFTER  컬럼명2;   
             
 
     ⚠️ NULL 제약 조건 변경은 자료형 변경  
@@ -147,10 +147,10 @@ last_modified_at: 2023-07-19
 - **RENAME :** 테이블명 변경
     - ALTER TABLE 기존 테이블명
         
-        RENAME 새로운 테이블명;  
+        **RENAME** 새로운 테이블명;  
         
 - **DROP**:  테이블 삭제
-    - DROP TABLE 테이블명;
+    - **DROP** TABLE 테이블명;
         - 외래키 갖는 테이블은 삭제 불가
             
             ```sql
