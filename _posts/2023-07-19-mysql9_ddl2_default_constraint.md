@@ -144,9 +144,10 @@ last_modified_at: 2023-07-19
             -- 테이블에서 외래키 설정하기
             CREATE TABLE PROJ(
             	PROJECTID INT PRIMARY KEY,
-            	EMPLOYEE CHAR(10) NOT NULL, -- 외래키 참조
+            	EMPLOYEE CHAR(10) NOT NULL,
             	PROJECT VARCHAR(30) NOT NULL,
             	COST INT,
+            	 -- 외래키 참조
             	CONSTRAINT FK_EMPLOYEETABLE FOREIGN KEY(EMPLOYEE) REFERENCES EMPLOYEETABLE(NAME)
             );
             ```
@@ -183,8 +184,27 @@ last_modified_at: 2023-07-19
 - **NO ACTION**
     - 참조하는 테이블에 변화 생겨도 아무 액션 취하지 않음
 - **CASCADE**
-    - 같이 삭제되거나 같이 변경됨
+    - 참조하는 테이블의 변화에 따라 데이터가 같이 삭제되거나 같이 변경됨
+        
+        ```sql
+        CREATE TABLE PROJ(
+        	PROJECTID INT PRIMARY KEY,
+        	EMPLOYEE CHAR(10) NOT NULL,
+        	PROJECT VARCHAR(30) NOT NULL,
+        	COST INT,
+        	 -- 외래키 참조
+        	CONSTRAINT FK_EMPLOYEETABLE FOREIGN KEY(EMPLOYEE) REFERENCES EMPLOYEETABLE(NAME)
+        	ON DELETE CASCADE ON UPDATE CASCADE -- 같이 수정되고 같이 삭제되는 옵션 설정
+        );
+        
+        -- EMPLOYEETABLE에서 EUNHA이름 변경 시 PROJ 테이블도 같이 변경
+        UPDATE EMPLOYEETABLE SET NAME='BAEKEUNHA' WHERE NAME='EUNHA';
+        
+        -- EMPLOYEETABLE에서 BAEKEUNHA 삭제 시 PROJ 테이블에서도 같이 삭제 됨
+        DELETE FROM EMPLOYEETABLE WHERE NAME='BAEKEUNHA';
+        ```
+        
 - **SET NULL**
-    - 삭제나 변경 시 NULL로 변경
+    - 참조하는 테이블의 변화에 따라 참조되는 데이터 NULL로 변경
 - **SET DEFAULT**
-    - 삭제나 변경 시 기본 값으로 변경
+    - 참조하는 테이블의 변화에 따라 참조되는 데이터 기본 값으로 변경
