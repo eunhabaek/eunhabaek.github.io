@@ -142,7 +142,7 @@ last_modified_at: 2023-07-19
             MODIFY COLUMN  컬럼명1 자료형 AFTER  컬럼명2;   
             
 
-⚠️ NULL 제약 조건 변경은 자료형 변경  
+    ⚠️ NULL 제약 조건 변경은 자료형 변경  
 
 - **RENAME :** 테이블명 변경
     - ALTER TABLE 기존 테이블명
