@@ -126,6 +126,7 @@ last_modified_at: 2023-07-19
 - 설정 방법
     - **컬럼제약조건**
         - REFERENCES 참조할테이블 이름(컬럼이름)[옵션]
+        - 버전에 따라 제공 안하기도 하므로 지양
             
             ```sql
             -- 컬럼에서 외래키 설정하기
@@ -208,3 +209,70 @@ last_modified_at: 2023-07-19
     - 참조하는 테이블의 변화에 따라 참조되는 데이터 NULL로 변경
 - **SET DEFAULT**
     - 참조하는 테이블의 변화에 따라 참조되는 데이터 기본 값으로 변경
+
+### 8. AUTO_INCREMENT
+
+- MySQL에서 일련번호 설정 위해 사용
+- 하나의 테이블에 한번만 사용 가능
+- AUTO_INCREMENT 설정된 컬럼은 UNIQUE나 PRIMARY KEY 제약 조건 설정이 필수
+    
+    ```sql
+    -- 일련번호 사용하여 속성 만들기
+    CREATE TABLE NUMERS(
+    	NUM INT AUTO_INCREMENT PRIMARY KEY, 
+    	TITLE CHAR(100),
+    	CONTENT TEXT
+    );
+    
+    INSERT INTO NUMERS(TITLE,CONTENT) VALUES('제목1','내용1'); -- NUM은 1로 자동 생성
+    INSERT INTO NUMERS(TITLE,CONTENT) VALUES('제목2','내용2'); -- NUM은 2로 자동 생성
+    ```
+    
+- 중간 행 삭제해도 숫자 변하지 않음
+- AUTO_INCREMENT가 설정되어 있어도 직접 값 입력 가능 - 지양
+    
+    ```sql
+    INSERT INTO NUMERS(NUM,TITLE,CONTENT) VALUES(10,'제목3','내용3'); -- NUM 직접 생성 가능
+    INSERT INTO NUMERS(TITLE,CONTENT) VALUES('제목4','내용4'); -- NUM은 11로 자동 생성됨
+    ```
+    
+- 테이블 만들 때 초기 값 설정 가능하며, ALTER TABLE 명령어로 초기 값 변경 가능
+    
+    ```sql
+    -- 초기 값 변경 가능 
+    ALTER TABLE NUMERS AUTO_INCREMENT=1000;
+    INSERT INTO NUMERS(TITLE,CONTENT) VALUES('제목5','내용5'); -- NUM은 1000으로 자동 생성됨
+    ```
+    
+
+### 9. 제약조건 작업
+
+- **제약조건 조회**
+    - FROM 절에 information_schema.table_constraints 작성
+        
+        ```sql
+        -- 모든 제약조건 조회
+        SELECT *
+        FROM information_schema.table_constraints;
+        ```
+        
+- **제약조건 수정**
+    - 형식:
+        
+        ALTER TABLE 테이블명  
+        
+        MODIFY 컬럼명 자료형 제약조건;  
+        
+- **제약조건 추가**
+    - 형식:
+        
+        ALTER TABLE 테이블명  
+        
+        ADD 테이블 제약조건;  
+        
+- **제약조건 삭제**
+    - 형식:
+        
+        ALTER TABLE 테이블명  
+        
+        DROP 제약조건명;
