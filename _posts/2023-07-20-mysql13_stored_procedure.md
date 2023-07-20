@@ -1,15 +1,4 @@
 ---
-title: "MySQL Stored Procedure"
-excerpt: "MySQL의 저장 프로시저"
-
-categories:
-  - database
-tags:
-  - MySQL
-last_modified_at: 2023-07-20
----
-
----
 title: "MySQL과 python 연동하기"
 excerpt: "pyMySQL을 이용하여 파이썬에서 MySQL 작업하기"
 
