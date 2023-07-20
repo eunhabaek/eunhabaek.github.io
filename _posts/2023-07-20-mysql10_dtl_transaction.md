@@ -10,22 +10,23 @@ last_modified_at: 2023-07-20
 ---
 
 
-### Transaction이란?
+## Transaction이란?
 
-- 개념: 논리적으로 한 번에 이루어져야 하는 작업의 단위
-- 성질
-    1. **Atomicity**: All or Nothing
-    2. **Consistency**: 트랜잭션 전 후의 결과는 일관됨
-    3. **Isolation**: 트랜잭션 작업 중 다른 트랜잭션 간섭 불가
-        - Rock 걸림, 한 테이블 동시 수정 불가
-    4. **Durability**: 완료된 트랜잭션은 변하지 않음
-- 동작
-    - **Commit**: 원본에 작업내용 반영
-    - **Rollback**: 작업 내용 반영하지 않음
-- JWT
+> 논리적으로 한 번에 이루어져야 하는 작업의 단위
+>
+
+## Transaction의 특징
+1. **Atomicity**: All or Nothing
+2. **Consistency**: 트랜잭션 전 후의 결과는 일관됨
+3. **Isolation**: 트랜잭션 작업 중 다른 트랜잭션 간섭 불가
+    - Rock 걸림, 한 테이블 동시 수정 불가
+4. **Durability**: 완료된 트랜잭션은 변하지 않음
+
+
+**JSON 트랜젝션 활용 -> JWT**
     - [https://velog.io/@vamos_eon/JWT란-무엇인가-그리고-어떻게-사용하는가-1](https://velog.io/@vamos_eon/JWT%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%EA%B0%80-1)
 
-### Transaction 관련 명령어
+## Transaction 관련 명령어
 
 - COMMIT: 현재까지 작업 내역 원본에 반영
 - ROLLBACK [TO  세이브포인트명] : 생성 지점 혹은 세이브포인트로 이동
@@ -48,15 +49,15 @@ last_modified_at: 2023-07-20
     ```
     
 
-### Transaction 생성 시점
+## Transaction 생성 시점
 
 - 트랜잭션 없는 시점에 DML 처음 실행 시
 
-### Transaction 종료 시점
+## Transaction 종료 시점
 
 - commit이나 rollback 수행 시 자동 종료
 
-### COMMIT 방법
+## COMMIT 방법
 
 - 명시적으로 COMMIT 명령 수행
 - AUTO COMMIT
@@ -77,7 +78,7 @@ last_modified_at: 2023-07-20
             
 - 접속 프로그램 정상 종료할 시 자동 COMMIT
 
-### ROLLBACK 방법
+## ROLLBACK 방법
 
 - 명시적으로 ROLLBACK 수행
     
@@ -91,7 +92,7 @@ last_modified_at: 2023-07-20
     
 - 접속 프로그램 비정상 종료하면 ROLLBACK
 
-### Transaction 모드
+## Transaction 모드
 
 - **Manual commit**
     - 트랜잭션 직접 조작

@@ -1,5 +1,5 @@
 ---
-title: "MySQL Temporary table"
+title: "MySQL "
 excerpt: "MySQL의 임시 테이블"
 
 categories:
