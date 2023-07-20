@@ -5,7 +5,7 @@ excerpt: "pyMySQL을 이용하여 파이썬에서 MySQL 작업하기"
 categories:
   - database
 tags:
-  - MySQL, python
+  - MySQL
 last_modified_at: 2023-07-20
 ---
 ## python과 MySQL 연동
