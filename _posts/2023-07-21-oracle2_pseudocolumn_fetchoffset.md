@@ -1,6 +1,6 @@
 ---
 title: "Oracle의 Pseudo column과 Fetch-Offset"
-excerpt: "오라클의 "
+excerpt: "오라클의  Pseudo column과 Fetch-Offset"
 
 categories:
   - database
