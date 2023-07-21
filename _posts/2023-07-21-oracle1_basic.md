@@ -8,7 +8,6 @@ tags:
   - Oracle
 last_modified_at: 2023-07-21
 ---
-
 ## Oracle이란?
 
 > 미국의 오라클 사에서 만든 관계형 데이터베이스이며, 우리나라 대기업과 공공기관에서 가장 많이 사용하는 데이터 베이스
@@ -45,10 +44,21 @@ last_modified_at: 2023-07-21
             
     
 
-### Oracle 접속 방법
+### Oracle 내부 접속 방법
 
 - 무선 네트워크 설정
 - host: 192.168.0.4
+- sid: xe
+- 계정: user12
+- 비밀번호: user12
+- 드라이버는 다운로드
+    
+    
+
+### Oracle 외부 접속 방법
+
+- host: 1.220.201.108
+- port: 1521
 - sid: xe
 - 계정: user12
 - 비밀번호: user12
@@ -70,4 +80,4 @@ last_modified_at: 2023-07-21
 
 - DESC  명령어 불가, database nevigator에서 직접 확인
     
-    ![figure1](/figures/mysql3.png)
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1c26642d-133e-4aa3-bc2e-06eebfe1ac5f/Untitled.png)
