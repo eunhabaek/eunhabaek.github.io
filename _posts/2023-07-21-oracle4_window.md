@@ -1,5 +1,5 @@
 ---
-title: "Oracle의 WINDOW FUNTION"
+title: "Oracle의 Window Function"
 excerpt: "오라클의 윈도우 함수"
 
 categories:
