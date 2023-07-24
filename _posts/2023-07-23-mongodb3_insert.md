@@ -102,7 +102,7 @@ last_modified_at: 2023-07-23
         - 커밋 사용하지 않음
         - 비정상 종료시 데이터 제대로 삽입되지 않음
             
-            ![Untitled]("/figures/mongo1.png")
+            ![Untitled](/figures/mongo1.png)
             
 
 ### 4. insertMany(객체)
