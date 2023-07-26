@@ -180,8 +180,8 @@ last_modified_at: 2023-07-19
 ### 7. 외래키 제약 조건의 옵션
 
 - 형식
-    - **ON DELETE**\{ NO ACTION | CASCADE | SET NULL | SET DEFAULT \} 4가지 중 선택
-    - **ON UPDATE**\{ NO ACTION | CASCADE | SET NULL | SET DEFAULT \} 4가지 중 선택
+    - **ON DELETE**\{ NO ACTION \| CASCADE \| SET NULL \| SET DEFAULT \} 4가지 중 선택
+    - **ON UPDATE**\{ NO ACTION \| CASCADE \| SET NULL \| SET DEFAULT \} 4가지 중 선택
 - **NO ACTION**
     - 참조하는 테이블에 변화 생겨도 아무 액션 취하지 않음
 - **CASCADE**
