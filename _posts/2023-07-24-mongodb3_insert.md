@@ -11,13 +11,12 @@ last_modified_at: 2023-07-23
 
 ## Document 생성
 
-- 특징
-    - 하나의 도큐먼트는 하나의 collection에 삽입
-    - 데이터 삽입 시\ _id라는 속성에 값 설정하지 않으면 자동으로 만들고 기본 키 값이 됨
-    - NoSQL의 collections는 RBDMS의 table과 유사
-    - 스키마
-        - NoSQL는 일반적으로 dict → create 먼저 하지 않아도 됨
-        - RBDMS는 일반적으로 Class
+- 하나의 도큐먼트는 하나의 collection에 삽입
+- 데이터 삽입 시\ _id라는 속성에 값 설정하지 않으면 자동으로 만들고 기본 키 값이 됨
+- NoSQL의 collections는 RBDMS의 table과 유사
+- 스키마
+    - NoSQL는 일반적으로 dict → create 먼저 하지 않아도 됨
+    - RBDMS는 일반적으로 Class
 
 ## 작업 실행 단위
 
