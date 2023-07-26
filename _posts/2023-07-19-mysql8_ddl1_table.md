@@ -12,9 +12,9 @@ last_modified_at: 2023-07-19
 
 ### 1. 테이블 생성 구문
 
-- CREATE [TEMPORARY] TABLE [IF NOT EXISTS] 이름(
+- CREATE [TEMPORARY] TABLE [IF NOT EXISTS] 이름(  
     컬럼명1 자료형 [컬럼제약조건 나열],  
-    컬럼명2 자료형 [컬럼제약조건 나열],  
+    컬럼명2 자료형 [컬럼제약조건 나열],    
     …  
     [CONSTRAINT 제약조건명]테이블 제약 조건 나열);  
 
