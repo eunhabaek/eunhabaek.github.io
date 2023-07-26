@@ -33,24 +33,24 @@ last_modified_at: 2023-07-20
     DELIMITER ;
     ```
 
-    - 생성 예시
-        
-        ```sql
-        -- DELIMITER는 프로시저 종료를 알리기 위한 기호 설정
-        -- DBeaver에서 수행할때는 SQL 스크립트 실행으로 
-        DELIMITER //
-        CREATE PROCEDURE PROC1(USID CHAR(15),
-        						USERNAME VARCHAR(20),
-        						BDAY INT(11),
-        						ADDR CHAR(100),
-        						PHONE CHAR(11),
-        						DT DATE)
-        		BEGIN
-        			INSERT INTO usertbl
-        			VALUES(USID,USERNAME, BDAY, ADDR, PHONE,DT);
-        		END //
-        DELIMITER ;
-        ```
+- 생성 예시
+    
+    ```sql
+    -- DELIMITER는 프로시저 종료를 알리기 위한 기호 설정
+    -- DBeaver에서 수행할때는 SQL 스크립트 실행으로 
+    DELIMITER //
+    CREATE PROCEDURE PROC1(USID CHAR(15),
+                            USERNAME VARCHAR(20),
+                            BDAY INT(11),
+                            ADDR CHAR(100),
+                            PHONE CHAR(11),
+                            DT DATE)
+            BEGIN
+                INSERT INTO usertbl
+                VALUES(USID,USERNAME, BDAY, ADDR, PHONE,DT);
+            END //
+    DELIMITER ;
+    ```
         
 - 호출
     - CALL 프로시저명(매개변수 나열)
