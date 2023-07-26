@@ -13,6 +13,7 @@ last_modified_at: 2023-07-21
 
 > 크로스 플랫폼 도큐먼트 지향 NoSQL 데이터베이스 시스템
 > 
+
 - 개발자는 저장 프로시저 대신에 자바스크립트 함수 와 유사한 형태의 함수를 만들어서 서버에서 사용할 수 있기 때문에 친숙하고 편리함
 - 스키마 생성 없이 데이터 저장 가능
 - Mongo Shell은 명령어 입력 터미널인 자바스크립트 인터프리터를 제공하고 내부에서는 C++ 언어로 동작
@@ -36,6 +37,7 @@ last_modified_at: 2023-07-21
 
 > MongoDB의 데이터 표현법-Javascript 객체 표현법과 동일
 > 
+
 - 장점
     1. **가벼움**
         - 각 필드의 데이터 타입과 길이 먼저 저장(정적)되기 때문에 빠르게 저장 됨
@@ -49,7 +51,6 @@ last_modified_at: 2023-07-21
 
 ```jsx
 {"key1":"value1","key2":"valkue2"}
-
 ```
 
 - key는 중복 불가
@@ -60,16 +61,14 @@ last_modified_at: 2023-07-21
 
 ### 2. 배열
 
-```jsx
-[데이터 나열]
-```
-
+- [데이터 나열] 형식으로 생성
 - MongoDB에서는 하나의 데이터를 Document라고 함
 
 ### 3. Collection
 
 > MongoDB 도큐먼트의 집합
 > 
+
 - MongoDB는 **스키마 만들지 않으므로** 어떤 종류든 삽입 가능
 - 실행 속도을 고려하여 데이터를 분할 저장 지향
 - 동일 종류끼리 하나의 collection에 저장 지향
@@ -83,28 +82,22 @@ last_modified_at: 2023-07-21
 
 ### 데이터베이스 목록 확인
 
-```jsx
-show dbs
-```
+- show dbs
+
 
 ### 데이터베이스 설정
+- 없는 이름 생성시 데이터 생성
+- use 데이터베이스명
 
-```jsx
-/* 없는 이름 생성시 데이터 생성*/
-use 데이터베이스명
-```
 
 ### 현재 사용 데이터베이스 삭제
 
-```jsx
-db.dropDatabase()
-```
+- db.dropDatabase()
+
 
 ### 현재 사용중 데이터베이스 확인
 
-```bash
-db
-```
+- db
 
 ### 데이터 삽입
 
@@ -114,7 +107,7 @@ db.mycollection.insertOne({name:1})
 
 ## 데이터베이스 접속 방법
 
-❕MongoDB는 아이디, 암호가 없고 포트 번호로 접속 가능    
+❕ MongoDB는 아이디, 암호가 없고 포트 번호로 접속 가능    
 
 ### 1. 설치된 셸에서 직접 접속
 
@@ -140,5 +133,5 @@ db.mycollection.insertOne({name:1})
 
 ### 2. 접속 프로그램 이용
 
-- robo 3t
+- **robo 3t**
     - https://studio3t.com/download-thank-you/?OS=win64
