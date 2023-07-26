@@ -80,4 +80,4 @@ last_modified_at: 2023-07-21
 
 - DESC  명령어 불가, database nevigator에서 직접 확인
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1c26642d-133e-4aa3-bc2e-06eebfe1ac5f/Untitled.png)
+    ![Untitled](/figures/oracle1.png)
