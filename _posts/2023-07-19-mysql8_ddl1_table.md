@@ -13,15 +13,12 @@ last_modified_at: 2023-07-19
 ### 1. 테이블 생성 구문
 
 - CREATE [TEMPORARY] TABLE [IF NOT EXISTS] 이름(
-    
     컬럼명1 자료형 [컬럼제약조건 나열],  
-    
     컬럼명2 자료형 [컬럼제약조건 나열],  
-    
     …  
-    
     [CONSTRAINT 제약조건명]테이블 제약 조건 나열);  
-    
+
+
     ```sql
     -- 테이블 생성
     -- 테이블 이름은 TABLE1
@@ -47,9 +44,9 @@ last_modified_at: 2023-07-19
 
 ### 2. 테이블의 자료형
 
-- 숫자: **INT(정수), FLOAT, DOUBLE, DECIMAL(전체 자리수[,소수자리수])**
+- 숫자: **INT**(정수), **FLOAT**, **DOUBLE**, **DECIMAL**(전체 자리수[,소수자리수])
 - 문자:
-    - **CHAR(바이트 수), VARCHAR(바이트 수), BINARY(바이트 수), VARBINARY(바이트 수)**
+    - **CHAR**(바이트 수), **VARCHAR**(바이트 수), **BINARY**(바이트 수), **VARBINARY**(바이트 수)
         - CHAR는 고정 공간, VARCHAR는 가변 공간에 저장→남는 공간 이용 가능
         - VARCHAR의 경우 데이터 변경되어 바이트 수 변경되면 Row Migration 발생
         - 프로그래밍에서 CHAR 연결 시 공백 주의
@@ -73,15 +70,15 @@ last_modified_at: 2023-07-19
 
 ### 3. 테이블 생성 옵션
 
-- ENGIN:
+- **ENGIN**
     - MyISAM: 조회에 유리, 인덱스 기능 우수
     - InnoDB: 트랜잭션 처리(삽입, 삭제, 갱신)에 유리, 인덱스 기능 떨어짐
-- auto_increment
+- **AUTO_INCREMENT**
     - 시퀀스(일련번호)의 초기값 설정
-    - ATLER TABLE 테이블명 auto_increment=초기값 이용하여 변경
-- DEFAULT CHARSET
+    - ATLER TABLE 테이블명 AUTO_INCREMENT=초기값 이용하여 변경
+- **DEFAULT CHARSET**
     - 인코딩 방식으로 , UTF8이나 UTF8mb4 주로 사용
-- COLLATION
+- **COLLATION**
     - 문자 정렬 방식
     
 
@@ -115,7 +112,7 @@ last_modified_at: 2023-07-19
 
 ### 6. 테이블 컬럼 수정
 
-- **CHANGE**: 이름과 자료형 수정
+1. **CHANGE**: 이름과 자료형 수정
     - ALTER TABLE 테이블명
         
         **CHANGE** 기존 컬럼명 새로운 컬럼명 자료형;  
@@ -126,43 +123,42 @@ last_modified_at: 2023-07-19
         CHANGE TEL PHONE INTEGER;
         ```
         
-- **MOFIDY**: 자료형만 또는 순서 수정
+2. **MOFIDY**: 자료형만 또는 순서 수정
     - 자료형 수정
         - ALTER TABLE 테이블명
-            
             **MOFIDY** 기존 컬럼명 새로운 컬럼명;  
             
     - 컬럼 순서 조정
         - ALTER TABLE 테이블명
-            
             **MODIFY** COLUMN  컬럼명 자료형 FIRST;  
             
         - ALTER TABLE 테이블명
-            
             **MODIFY** COLUMN  컬럼명1 자료형 AFTER  컬럼명2;   
             
 
     ⚠️ NULL 제약 조건 변경은 자료형 변경  
 
-- **RENAME :** 테이블명 변경
-    - ALTER TABLE 기존 테이블명
+
+### 7. 테이블명 변경: RENAME 
+- ALTER TABLE 기존 테이블명
+    **RENAME** 새로운 테이블명;  
         
-        **RENAME** 새로운 테이블명;  
+### 8. 테이블 삭제: DROP
+- **DROP** TABLE 테이블명;
+    - 외래키 갖는 테이블은 삭제 불가
         
-- **DROP**:  테이블 삭제
-    - **DROP** TABLE 테이블명;
-        - 외래키 갖는 테이블은 삭제 불가
+        ```sql
+        -- 테이블 삭제 -> 외래키 있으면 불가능
+        DROP TABLE TABLE1;
+        
+        -- 삭제된 지 확인
+        SHOW TABLES;
+        ```
             
-            ```sql
-            -- 테이블 삭제 -> 외래키 있으면 불가능
-            DROP TABLE TABLE1;
-            
-            -- 삭제된 지 확인
-            SHOW TABLES;
-            ```
-            
-- **TRUNCATE**: 테이블 모든 데이터 삭제
-    - 복구되지 않으므로 주의❗
+### 9. 테이블 모든 데이터 삭제: TRUNCATE 
+- 복구되지 않으므로 주의❗
+
+### 10. 그 밖의 기능
 - **ROW_FORMAT=COMPRESSED 옵션**: 테이블 압축 기능
     - CREATE TABLE의 옵션으로 사용
     - 저장용량 줄어드나 작업 시간 길어짐
