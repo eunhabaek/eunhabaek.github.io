@@ -31,15 +31,15 @@ last_modified_at: 2023-07-24
     
     ![Untitled](/figures/mongo3.png)
     
-- pymongo 설치
-    1. pip로 다운
+- pymongo 설치 방법
+    1. pip로 설치
+        
+        ```bash
+        #terminal에서 수행
+        pip install pymongo
+        ```
     
-    ```bash
-    #terminal에서 수행
-    pip install pymongo
-    ```
-    
-    1. file>settings> “python interpreter” 검색 후 필요한 프로그램 설치 (pymongo)
+    2. file>settings> “python interpreter” 검색 후 필요한 프로그램 설치 (pymongo)
 
 ## 데이터베이스 연결 객체 생성
 
@@ -113,42 +113,42 @@ last_modified_at: 2023-07-24
         ```
         
     
-    ## MongoDB의 수정
-    
-    - update, update_many
-    - 매개변수 2개
-        - **$set** 연산자 이용
-        - 첫번쨰는 수정된 데이터의 조건, 두번째는 새 데이터
-            
-            ```python
-            #name이 eunha인 데이터를 baekeunha로 수정
-            coll.update_many({"name":"eunha"},{"$set":{"name":"baekeunha"}})
-            ```
-            
-    
-    ## MongoDB의 삭제
-    
-    - delete_one, delete_many
-    - 매개변수 1개
-    
-    ## 도커 이미지 저장
-    
-    - 터미널에서 작업
+## MongoDB의 수정
+
+- update, update_many
+- 매개변수 2개
+    - **$set** 연산자 이용
+    - 첫번쨰는 수정된 데이터의 조건, 두번째는 새 데이터
         
-        ```bash
-        docker save -o mongo0723.tar mongo:latest
+        ```python
+        #name이 eunha인 데이터를 baekeunha로 수정
+        coll.update_many({"name":"eunha"},{"$set":{"name":"baekeunha"}})
         ```
         
+
+## MongoDB의 삭제
+
+- delete_one, delete_many
+- 매개변수 1개
+
+## 도커 이미지 저장
+
+- 터미널에서 작업
     
-    ## 도커 이미지 다운 및 재설치
+    ```bash
+    docker save -o mongo0723.tar mongo:latest
+    ```
     
-    - 다른 서버에서 동일한 환경 구축 가능
-    - 터미널에서 작업
-        
-        ```bash
-        #이미지 다시 로딩
-        docker load -i mongo0723.tar
-        
-        #도커 컨테이너 재설치
-        docker run --name mongodb_eunha -v ~/data:/data/db -d -p 27017:27017 mongo
-        ```
+
+## 도커 이미지 다운 및 재설치
+
+- 다른 서버에서 동일한 환경 구축 가능
+- 터미널에서 작업
+    
+    ```bash
+    #이미지 다시 로딩
+    docker load -i mongo0723.tar
+    
+    #도커 컨테이너 재설치
+    docker run --name mongodb_eunha -v ~/data:/data/db -d -p 27017:27017 mongo
+    ```
