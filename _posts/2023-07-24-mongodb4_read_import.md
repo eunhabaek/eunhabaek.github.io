@@ -1,5 +1,5 @@
 ---
-title: "MongoDB의 file import and find"
+title: "MongoDB의 데이터 조회"
 excerpt: "MongoDB에서 외부 파일을 import 하고 데이터를 조회하기"
 
 categories:
