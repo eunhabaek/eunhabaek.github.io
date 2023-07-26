@@ -12,7 +12,7 @@ last_modified_at: 2023-07-24
 
 - pyCharm에서 new project 생성
     
-    ![Untitled](/figures/mongo1.png)
+    ![Untitled](/figures/mongo3.png)
     
 - pymongo 설치
     1. pip로 다운
