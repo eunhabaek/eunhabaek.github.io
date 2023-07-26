@@ -54,6 +54,7 @@ SELECT * FROM (SELECT 절) 이름;
 
 > CREATE VIEW 로 생성된 일반적인 VIEW
 > 
+
 - 형식:
     
     ```sql
