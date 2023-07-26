@@ -28,9 +28,9 @@ last_modified_at: 2023-07-20
 
 ## Transaction 관련 명령어
 
-- COMMIT: 현재까지 작업 내역 원본에 반영
-- ROLLBACK [TO  세이브포인트명] : 생성 지점 혹은 세이브포인트로 이동
-- SAVEPOINT 세이브포인트명: 세이브포인트 생성
+- **COMMIT**: 현재까지 작업 내역 원본에 반영
+- **ROLLBACK** [TO  세이브포인트명] : 생성 지점 혹은 세이브포인트로 이동
+- **SAVEPOINT** 세이브포인트명: 세이브포인트 생성
     
     ```sql
     -- DEPT 테이블에 데이터 1개 삽입: 트랜잭션 생성
@@ -59,8 +59,8 @@ last_modified_at: 2023-07-20
 
 ## COMMIT 방법
 
-- 명시적으로 COMMIT 명령 수행
-- AUTO COMMIT
+1. 명시적으로 COMMIT 명령 수행
+2. AUTO COMMIT
     - DDL이나 DCL 수행
         - 일반적으로 관리자 명령어이므로 바로 반영
             
@@ -76,7 +76,7 @@ last_modified_at: 2023-07-20
             ROLLBACK; 
             ```
             
-- 접속 프로그램 정상 종료할 시 자동 COMMIT
+    - 접속 프로그램 정상 종료할 시 자동 COMMIT
 
 ## ROLLBACK 방법
 
