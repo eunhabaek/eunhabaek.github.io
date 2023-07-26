@@ -1,6 +1,6 @@
 ---
-title: "MongoDB의 데이터 조회"
-excerpt: "MongoDB에서 외부 파일을 import 하고 데이터를 조회하기"
+title: "MongoDB와 python 연동"
+excerpt: "MongoDB와 파이썬 연동하기"
 
 categories:
   - database
@@ -12,7 +12,7 @@ last_modified_at: 2023-07-24
 
 - pyCharm에서 new project 생성
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cae50d3-0bc7-40e4-b4e1-1175bd12e5d5/Untitled.png)
+    ![Untitled](/figures/mongo1.png)
     
 - pymongo 설치
     1. pip로 다운
