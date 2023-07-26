@@ -75,13 +75,12 @@ last_modified_at: 2023-07-23
     
 
 ### 2. 특정 속성(컬럼)만 조회
+- 추출할 컬럼에만 TRUE(1)
+    ```jsx
+    db.컬랙션명.find({조건},{컬럼명:true(1) or false(0),...})
 
-```jsx
-/* 추출할 컬럼에만 TRUE(1) */
-db.컬랙션명.find({조건},{컬럼명:true(1) or false(0),...})
-
-db.coll1.find({name:"eunha",age:27},{age:1}) /*age만 조회*/
-```
+    db.coll1.find({name:"eunha",age:27},{age:1}) /*age만 조회*/
+    ```
 
 ### 3. 비교 연산자 이용 조회
 
