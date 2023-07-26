@@ -12,14 +12,14 @@ last_modified_at: 2023-07-23
 ## 외부 JSON로 데이터 생성
 
 - 도커 컨테이너에 파일 복사 명령어 : 환경설정할 시에 이용
-    - 터미널에서 작업
-    - 컨테이너의 tmp 디렉토리에  json 파일 복사하기
-        
-        ```bash
-        #docker cp 파일경로 컨테이너명:/복사디렉토리/파일명
-        docker cp C:\Users\USER\Downloads\area.json mongodb_eunha:/tmp/area.json
-        ```
-        
+- 터미널에서 작업
+- 컨테이너의 tmp 디렉토리에  json 파일 복사하기
+    
+    ```bash
+    #docker cp 파일경로 컨테이너명:/복사디렉토리/파일명
+    docker cp C:\Users\USER\Downloads\area.json mongodb_eunha:/tmp/area.json
+    ```
+    
 
 ## 외부 JSON 파일 읽어오기
 
@@ -63,7 +63,7 @@ last_modified_at: 2023-07-23
 - 매개변수 2개(쿼리, 조회할 필드)
 - 리턴은 cursor
 
-### 조건 검색
+### 1. 조건 검색
 
 - 일치하는 데이터 조회
 - 조건 값 여러개 입력 시 and 조건으로 간주
@@ -74,7 +74,7 @@ last_modified_at: 2023-07-23
     ```
     
 
-### 특정 속성(컬럼)만 추출
+### 2. 특정 속성(컬럼)만 조회
 
 ```jsx
 /* 추출할 컬럼에만 TRUE(1) */
@@ -83,7 +83,7 @@ db.컬랙션명.find({조건},{컬럼명:true(1) or false(0),...})
 db.coll1.find({name:"eunha",age:27},{age:1}) /*age만 조회*/
 ```
 
-### 비교 연산자
+### 3. 비교 연산자 이용 조회
 
 - 사용방법
     
@@ -120,7 +120,7 @@ db.coll1.find({name:"eunha",age:27},{age:1}) /*age만 조회*/
         ```
         
 
-### 논리 결합 연산자
+### 4. 논리 결합 연산자 이용 조회
 
 - **$not**
     - age가 25보다 크지 않은 데이터 조회
@@ -148,7 +148,7 @@ db.coll1.find({name:"eunha",age:27},{age:1}) /*age만 조회*/
     ```
     
 
-### 문자열 조회
+### 5. 문자열 조회
 
 - **$regex**: 정규표현식
     - name에 s 포함하는 데이터 조회
@@ -171,8 +171,9 @@ db.coll1.find({name:"eunha",age:27},{age:1}) /*age만 조회*/
         
 - **$text**: 문자열 검색
 
-### **배열 연산자** →RDBMS와 다른 점
+### 6. 배열 연산자 이용 조회
 
+- RDBMS와 다른 점
 - NoSQL은 객체 안에 배열 저장 가능
 - 객체 안에 존재하는 배열을 이용하여 조회 가능함
 - 종류
@@ -200,7 +201,7 @@ db.coll1.find({name:"eunha",age:27},{age:1}) /*age만 조회*/
             ```
             
 
-### 특정 인덱스의 데이터 조회 {$slice}
+### 7. 특정 인덱스의 데이터 조회 {$slice}
 
 - {$slice:인덱스} : 인덱스번째까지 데이터 조회
     - 인덱스에 음수 가능
@@ -212,7 +213,7 @@ db.coll1.find({name:"eunha",age:27},{age:1}) /*age만 조회*/
         ```
         
 
-### 컬럼 존재 유무확인 {$exists} → RDBMS에는 X
+### 8. 컬럼 존재 유무확인 {$exists} → RDBMS에는 X
 
 - $exists 연산자 이용하여 컬럼 존재여부 확인 가능
 - NoSQL은 한 컬렉션 내의 데이터 모양이 다를 수 있기 때문에 확인이 필요함
@@ -221,13 +222,14 @@ db.coll1.find({name:"eunha",age:27},{age:1}) /*age만 조회*/
 
 > MongoDB에서 조회 성능을 높이기 위해 find 함수의 결과로 cursor를 리턴하는데, cursor란 query 결과를 가리키는 **포인터**(위치)이다. → DQL은 NoSQL이 효율적
 > 
+
 - RDBMS와의 차이점
     - RDBMS는 쿼리 결과로 실제 데이터를 리턴
     - 일부 데이터만 조회할 경우 cursor에 비해 메모리 비효율적
 - cursor의 메서드
     - **hasNext( )**: 데이터 존재여부 리턴
     - **next( )**: 데이터 존재하는 경우 다음 데이터를 리턴
-        
+
         ```jsx
         /*리턴된 cursor를 변수에 저장*/
         var cursor=db.inventory.find()
@@ -240,7 +242,8 @@ db.coll1.find({name:"eunha",age:27},{age:1}) /*age만 조회*/
         cursor.hasNext() ? cursor.next() : null
         ```
         
-- 프로그래밍에서는 iterator, enumerator와 유사하며, 이를 쉽게 사용할 수 있도록 만든 제어문이 python의 for입니다.
+- 프로그래밍에서는 iterator, enumerator와 유사하며, 이를 쉽게 사용할 수 있도록 만든 제어문이 python의 for
+
 
 ## 기타 조회 함수
 
