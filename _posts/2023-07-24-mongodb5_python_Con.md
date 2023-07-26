@@ -8,6 +8,23 @@ tags:
   - MongoDB
 last_modified_at: 2023-07-24
 ---
+## MongoDB의 데이터 집계
+
+|  | Application | Map-Reduce | Database pipeline |
+| --- | --- | --- | --- |
+| 자유도 | 높음 | 높은 편 | 낮음 |
+| 램 사용량 | 높음 | 높음 | 낮음 |
+| 처리속도 | 느림 | 보통 | 빠름 |
+| 처리위치 | apllication 내부 | javascript engine | mongoDB 내부 |
+
+### 1. application 이용 → 선호되는 방식
+
+### 2.  map-reduce
+
+![Untitled](/figures/mongo2.png)
+
+### 3. database pipeline
+
 ## python mongo DB 연동
 
 - pyCharm에서 new project 생성
