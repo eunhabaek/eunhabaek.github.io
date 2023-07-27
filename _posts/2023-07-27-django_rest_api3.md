@@ -130,7 +130,7 @@ last_modified_at: 2023-07-27
     
 - 출력 되는지 확인
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b1f41c71-5418-416d-a378-7898fb46f942/Untitled.png)
+    ![Untitled](/figures/django_api6.png)
     
 
 ### 2.입력 받아서 name과 일치하는 1개 데이터만 가져오기
@@ -182,4 +182,4 @@ last_modified_at: 2023-07-27
     
 - 출력되는지 확인
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/83c03d6d-796e-427b-a07e-c4d130af8e10/Untitled.png)
+    ![Untitled](/figures/django_api7.png)
