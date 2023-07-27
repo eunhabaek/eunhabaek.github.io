@@ -57,7 +57,7 @@ last_modified_at: 2023-07-27
 4. 웹브라우저에서 확인
     - 서버 실행 후 [localhost:8000/example/hello](http://localhost:8000/example/hello) 경로 접속
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/958072db-0601-4e13-b323-9bb21d5924ca/Untitled.png)
+        ![Untitled](/figures/django_api.png)
         
 5. Resonse 클래스
     - 응답 결과를 위한 클래스
@@ -124,15 +124,15 @@ last_modified_at: 2023-07-27
 - 서버 접속(http://localhost:8000/example/post/) 후 작동 확인
     - POST에 JSON 형식으로 입력
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9f5cea3a-8ad9-445d-bdc5-ab6e2f395608/Untitled.png)
+        ![Untitled](/figures/django_api2.png)
         
     - 데이터 입력 정상 완료ㅇ
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0da79559-70b6-432c-9b62-58815dbd43ef/Untitled.png)
+        ![Untitled](/figures/django_api3.png)
         
     - DBeaver에서 데이터 입력 되었는지 확인
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f2aa4fe8-49d5-4989-b851-b8c846e02391/Untitled.png)
+        ![Untitled](/figures/django_api4.png)
         
 
 ## 데이터 1개 가져오기
@@ -173,4 +173,4 @@ last_modified_at: 2023-07-27
 - [http://localhost:8000/example/one_post/은하/](http://localhost:8000/example/one_post/%EC%9D%80%ED%95%98/)  접속하여 데이터 조회 확인
     - 기본키 name이 “은하”인 데이터가 1개 조회됨
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f2a3b2b2-989d-4216-a8f0-b23f72505fb5/Untitled.png)
+        ![Untitled](/figures/django_api5.png)
