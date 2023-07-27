@@ -13,6 +13,7 @@ last_modified_at: 2023-07-27
 
 > **프로그램과 프로그램을 연결시켜주는 매개체**
 > 
+
 - 데이터의 형태로 제공될 수도 있고 함수, 클래스 , 패키지, 프레임워크 형태로도 제공
 - **Open API**
     - 누구나 사용 가능하도록 공개한 것
@@ -132,6 +133,7 @@ last_modified_at: 2023-07-27
 
 > 프로그램 객체 전송 위한 작업
 > 
+
 - client 에게 받은 데이터를 python 객체로 변환 및 python 객체를 client에게 전송하기 위해 JSON 문자열로 변환하는 역할
 - 이 작업 수행 시 Response 리턴, 미수행시 JsonResponse 리턴
 - 애플리케이션에 [serializers.py](http://serializers.py) 파일을 만들고 작성
