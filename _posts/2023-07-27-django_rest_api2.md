@@ -126,7 +126,7 @@ last_modified_at: 2023-07-27
         
         ![Untitled](/figures/django_api2.png)
         
-    - 데이터 입력 정상 완료ㅇ
+    - 데이터 입력 정상 완료
         
         ![Untitled](/figures/django_api3.png)
         
