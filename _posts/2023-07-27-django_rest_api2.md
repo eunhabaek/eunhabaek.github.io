@@ -1,6 +1,6 @@
 ---
 title: "Django Rest API 실습하기"
-excerpt: "Django로 MySQL 연결하여 REST API 데이터 불러오기"
+excerpt: "Django로 MySQL 연결하여 REST API 데이터 실습"
 
 categories:
   - database
