@@ -1,6 +1,6 @@
 ---
-title: "Django 시작하기"
-excerpt: "Django 설치 및 앱 실행"
+title: "Django에서 GET 전송"
+excerpt: "Django GET 요청 처리"
 
 categories:
   - Webserver
