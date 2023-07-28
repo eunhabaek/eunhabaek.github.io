@@ -9,8 +9,6 @@ tags:
 last_modified_at: 2023-07-25
 ---
 
-
-
 ## Redis의 문자열
 
 - 저장
