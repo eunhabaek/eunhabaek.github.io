@@ -239,7 +239,7 @@ last_modified_at: 2023-07-26
 
 1. html 파라미터 요청 경로 만들기
     
-    ```python
+    ```html
     <h2>
         {% for item in data %}
             {{item.id}} - <a href="detail/{{item.id}}"> {{item.name}}</a> - {{item.price}} - {{item.info}}
@@ -267,7 +267,7 @@ last_modified_at: 2023-07-26
         
 4. 함수 적용할 html 생성
     
-    ```python
+    ```html
     <!DOCTYPE html>
     <html lang="en">
     <head>
