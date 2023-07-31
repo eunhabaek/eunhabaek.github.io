@@ -28,7 +28,7 @@ last_modified_at: 2023-07-26
     - 서버 실행
     - http://127.0.0.1/admin/ 접속 후 로그인
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4c492846-8de1-4e87-b2ac-4095099ee96e/Untitled.png)
+        ![Untitled](/figures/django2.png)
         
 
 ## 요청 처리하기
@@ -55,7 +55,7 @@ last_modified_at: 2023-07-26
             ]
             ```
             
-        - [views.py](http://views.py) 파일에 [urls.py](http://urls.py)에 등록할 함수 생성
+        - views.py 파일에 urls.py에 등록할 함수 생성
             
             ```bash
             from django.shortcuts import render
@@ -72,7 +72,7 @@ last_modified_at: 2023-07-26
             
         - 웹서버 접속하여 확인
             
-            ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4000f91b-0d4b-4f5f-b7d3-2f4d4a44457b/Untitled.png)
+            ![Untitled](/figures/django3.png)
             
     - 전송방법1
         - urls.py에 처리할 함수 설정
@@ -124,9 +124,9 @@ last_modified_at: 2023-07-26
             </html>
             ```
             
-        - 데이터 전송 여부 확인하기([http://localhost:8000/disp/](http://localhost:8000/disp))
+        - 데이터 전송 여부 확인하기(http://localhost:8000/disp/)
             
-            ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37170dc7-e050-4e60-87db-257d91808a56/Untitled.png)
+            ![Untitled](/figures/django4.png)
             
 2. **Template Engine** 이용
     - server side rendering
@@ -198,9 +198,9 @@ last_modified_at: 2023-07-26
             </html>
             ```
             
-        - 데이터 전송 여부 확인하기([http://localhost:8000/temp/](http://localhost:8000/disp))
+        - 데이터 전송 여부 확인하기(http://localhost:8000/temp/)
             
-            ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/86d3b2bb-ea5b-4e6f-991a-9a9ffa2de31f/Untitled.png)
+            ![Untitled](/figures/django5.png)
             
     - if 또는 for 사용
         - \{\%if 조건\%\} ~\{\% endif\%\}
