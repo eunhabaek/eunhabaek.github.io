@@ -85,12 +85,12 @@ last_modified_at: 2023-07-26
     - loopback은 외부 나갔다가 다시 접속 → 방화벽의 영향 받음
 - http://127.0.0.1:8000 접속
     
-    ![Untitled](/figures/django_api.png)
+    ![Untitled](/figures/django1.png)
     
 
 ## Django의 project 및 app 파일 setting
 
-### 1. [settings.py](http://settings.py)
+### 1. settings.py
 
 - **ALLOWED_HOSTS**
     - 접속 가능 ip설정
@@ -103,7 +103,7 @@ last_modified_at: 2023-07-26
     - 기본 DB는 sqlite3
 - **INSTALLED_APPS**
     - application 등록
-    - python [manage.py](http://manage.py) startapp 명령어로 생성한 앱 이름 등록
+    - python manage.py startapp 명령어로 생성한 앱 이름 등록
 
 ### 2. urls.py
 
@@ -114,9 +114,9 @@ last_modified_at: 2023-07-26
 
 - RDBMS와 연동할 모델을 등록
 - 2개 수행 단계
-    - python [manage.py](http://manage.py) make migrations
-    - python [manage.py](http://manage.py) migrate ⇒ 테이블 생성
-- migration 수행되지 않으면 migrations 디렉토리의 __init__.py를 삭제하고 다시 수행
+    - python manage.py make migrations
+    - python manage.py migrate ⇒ 테이블 생성
+- migration 수행되지 않으면 migrations 디렉토리의 \_\_init\_\_.py를 삭제하고 다시 수행
 
 ### 4. views.py
 
