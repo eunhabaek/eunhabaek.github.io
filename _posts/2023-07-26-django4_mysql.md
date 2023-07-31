@@ -32,7 +32,7 @@ last_modified_at: 2023-07-26
     }
     ```
     
-- [models.py](http://models.py) 파일에 테이블과 연결될 모델 생성
+- models.py 파일에 테이블과 연결될 모델 생성
     
     ```bash
     from django.db import models
@@ -55,11 +55,11 @@ last_modified_at: 2023-07-26
     
 - 명령 수행 시 관리자를 위한 테이블과 models.py로 만들 클래스를 생성하는데 app명_모델이름
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c44eb773-ad94-42e1-8da8-814694c8965a/Untitled.png)
+    ![Untitled](/figures/django6.png)
     
 - 만들어진 테이블 구조 확인
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8774aff8-0bb3-4c87-a555-9cf48a2f78ba/Untitled.png)
+    ![Untitled](/figures/django7.png)
     
 
 ## 데이터 조회
@@ -117,7 +117,7 @@ last_modified_at: 2023-07-26
     ]
     ```
     
-- [views.py](http://views.py)에 요청 처리할 메소드 생성
+- views.py에 요청 처리할 메소드 생성
     
     ```python
     from testapp from models
@@ -249,7 +249,7 @@ last_modified_at: 2023-07-26
     </h2>
     ```
     
-2. [urls.py](http://urls.py) 
+2. urls.py
     - path(’요청경로/<파라미터자료형:파라미터명>’,처리할 함수나 클래스)
         
         ```python
