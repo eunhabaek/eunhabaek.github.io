@@ -58,7 +58,7 @@ last_modified_at: 2023-07-26
     django-admin startproject project1 .
     ```
     
-- 프로젝트 디렉토리와 [manage.py](http://manage.py) 생성
+- 프로젝트 디렉토리와 manage.py 생성
 - mange.py는 실행 파일, main 함수를 포함
 - python의 기본 entry 파일 명은 main.py
 
@@ -67,17 +67,17 @@ last_modified_at: 2023-07-26
 - 터미널 작업
     
     ```bash
-    python .\manage.py startapp testapp
+    python manage.py startapp testapp
     ```
     
 
 ### 5. application 실행
 
-- python .\[manage.py](http://manage.py/) runserver 외부접속 IP :포트번호
+- python manage.py runserver 외부접속 IP :포트번호
 - IP와 포트 생략 시 로컬로만 접속 가능
     
     ```bash
-    python .\[manage.py](http://manage.py/) runserver
+    python manage.py runserver
     ```
     
 - 도커가 메인 페이지 제공(127.0.0.1) ⇒ loopback
@@ -85,7 +85,7 @@ last_modified_at: 2023-07-26
     - loopback은 외부 나갔다가 다시 접속 → 방화벽의 영향 받음
 - http://127.0.0.1:8000 접속
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7c741a0f-8f1e-4535-b0f1-0613b8a9dd04/Untitled.png)
+    ![Untitled](/figures/django_api.png)
     
 
 ## Django의 project 및 app 파일 setting
