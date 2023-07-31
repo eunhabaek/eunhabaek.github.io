@@ -203,7 +203,7 @@ last_modified_at: 2023-07-26
             ![Untitled](/figures/django5.png)
             
     - if 또는 for 사용
-        - \{\%if 조건\%\} ~\{\% endif\%\}
+        - \{%if 조건%\} ~\{% endif%\}
             - elif 나 else도 사용가능
                 
                 ```html
@@ -216,7 +216,7 @@ last_modified_at: 2023-07-26
                 </h3>
                 ```
                 
-        - \{\%for 임시변수 in 데이터모임\%\} ~ \{\% endfor \%\}
+        - \{%for 임시변수 in 데이터모임%\} ~ \{% endfor %\}
             
             ```html
             <h3>
