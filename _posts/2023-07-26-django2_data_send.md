@@ -203,7 +203,7 @@ last_modified_at: 2023-07-26
             ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/86d3b2bb-ea5b-4e6f-991a-9a9ffa2de31f/Untitled.png)
             
     - if 또는 for 사용
-        - {%if 조건%} ~{% endif%}
+        - \{\%if 조건\%\} ~\{\% endif\%\}
             - elif 나 else도 사용가능
                 
                 ```html
@@ -216,7 +216,7 @@ last_modified_at: 2023-07-26
                 </h3>
                 ```
                 
-        - {%for 임시변수 in 데이터모임%} ~ {% endfor %}
+        - \{\%for 임시변수 in 데이터모임\%\} ~ \{\% endfor \%\}
             
             ```html
             <h3>
@@ -227,11 +227,11 @@ last_modified_at: 2023-07-26
             ```
             
     - 날짜 출력
-        - {{날짜|date: 포맷}}
+        - \{\{날짜|date: 포맷\}\}
             - 날짜를 포맷에 맞추어 출력
     - 문자열
         - 함수 적용 가능
-            - {{문자열|문자열메서드}}
+            - \{\{문자열|문자열메서드\}\}
                 
                 ```html
                 <body>
