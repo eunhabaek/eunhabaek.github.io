@@ -1,2 +1,2 @@
 ## 기술 블로그
-eunhabaek.github.io[https://eunhabaek.github.io/]
+[eunhabaek.github.io 링크](https://eunhabaek.github.io/)
