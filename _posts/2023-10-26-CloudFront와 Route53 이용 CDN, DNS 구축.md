@@ -73,8 +73,9 @@ Route53
 
 *   호스팅 영역 등록
 
-AWS certification
+ACM (AWS certification Manager)
 -----------------
+: HTTPS를 위해 SSL/TSL 인증서를 발급받기
 
 *   도메인 이름 설정
     
