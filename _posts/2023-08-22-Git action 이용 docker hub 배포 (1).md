@@ -1,5 +1,10 @@
-Git action 이용 docker hub 배포 실습
-==============================
+---
+title: "Git action 이용 docker hub 배포 (1)"
+
+categories:
+  - CI/CD
+last_modified_at: 2023-08-22
+---
 
 ### git hub action 이용 docker hub 배포 과정
 
