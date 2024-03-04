@@ -3,8 +3,6 @@ title: "Cloud Watch에서 주제-구독 설정 후 경보 보내기"
 
 categories:
   - AWS
-tags:
-  - 
 last_modified_at: 2023-09-08
 ---
 
