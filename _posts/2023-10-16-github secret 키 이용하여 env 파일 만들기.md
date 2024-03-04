@@ -1,9 +1,15 @@
-github secret 키 이용하여 .env 파일 만들기
-================================
 
-Tags
+---
+title: "github secret 키 이용하여 .env 파일 만들기"
 
-AWS
+categories:
+  - CICD
+tags:
+  - Deployment
+last_modified_at: 2023-10-16
+---
+
+github secret 키 이용하여 .env 파일 만드는 코드 추가
 
     # This is a basic workflow to help you get started with Actions
     
