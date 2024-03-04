@@ -1,5 +1,12 @@
-ECS에 SpringBoot 배포
-==================
+---
+title: "ECS에 SpringBoot 앱 배포"
+
+categories:
+  - AWS
+tags:
+  - Deployment
+last_modified_at: 2023-10-20
+---
 
 SpringBoot Dockerfile
 ---------------------
@@ -98,16 +105,8 @@ ECS에 배포 위한 git action 코드
               cluster: ${{ env.ECS_CLUSTER }}
               wait-for-service-stability: true
 
-git action 적용 배포 속도
--------------------
 
-[![](ECS%E1%84%8B%E1%85%A6%20SpringBoot%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%20791a05beb2674c3abc4777cec62c45f8/Untitled.png)](ECS%E1%84%8B%E1%85%A6%20SpringBoot%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%20791a05beb2674c3abc4777cec62c45f8/Untitled.png)
-
-*   편차가 큰 것을 확인할 수 있음
-
-*   캐싱을 추가하기
-
-캐싱 코드 추가
+캐싱 코드 추가하여 빌드/배포 속도 줄이기
 --------
 
     - name: Gradle Caching
