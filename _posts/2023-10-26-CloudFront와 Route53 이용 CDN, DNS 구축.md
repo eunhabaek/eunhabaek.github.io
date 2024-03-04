@@ -9,16 +9,17 @@ last_modified_at: 2023-10-26
 ---
 
 
-CDN
+CDN (Content Delivery Network)
 ---
 
 *   Origin server가 아닌 가까운 edge location으로부터 contents를 다운 받을 수 있음
 
 *   캐싱 가능
+  
+*   AWS의 CloudFront 서비스로 구축 가능
 
-*   S3에는 HTTPS 적용 안되므로 HTTPS 적용 시 필수
 
-Cloud Front 주의점
+CloudFront 주의점
 ---------------
 
 *   업데이트 시 바로 적용이 안되는 경우가 있어서 cache 무력화를 해주지 않으면 24시간 이후 반영됨
