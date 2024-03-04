@@ -2,7 +2,7 @@
 title: "github secret 키 이용하여 .env 파일 만들기"
 
 categories:
-  - CICD
+  - CI/CD
 tags:
   - Deployment
 last_modified_at: 2023-10-16
