@@ -1,5 +1,12 @@
-CloudFront 이용 서버 배포
-===================
+---
+title: "AWS CloudFront"
+
+categories:
+  - AWS
+tags:
+  - Network
+last_modified_at: 2023-09-08
+---
 
 CDN(content delivery network)
 -----------------------------
@@ -52,23 +59,22 @@ AWS CloudFront 배포 생성
 
 ### 원본 생성
 
-[![](CloudFront%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%201df6eb6a6aed4a9d88c5c2cb7fa4269d/Untitled.png)](CloudFront%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%201df6eb6a6aed4a9d88c5c2cb7fa4269d/Untitled.png)
+![image](https://github.com/eunhabaek/eunhabaek.github.io/assets/67853963/e227e592-61f8-4ba9-bb49-7346dac90f6a)
 
 ### 기본 캐시 동작
 
-[![](CloudFront%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%201df6eb6a6aed4a9d88c5c2cb7fa4269d/Untitled%201.png)](CloudFront%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%201df6eb6a6aed4a9d88c5c2cb7fa4269d/Untitled%201.png)
+![image](https://github.com/eunhabaek/eunhabaek.github.io/assets/67853963/a19463e3-4915-4380-8b30-e2cd230ffe6e)
 
 *   뷰어 프로토콜 Redirect HTTP to HTTPS 선택
 
 ### 웹 애플리케이션 방화벽
 
-[![](CloudFront%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%201df6eb6a6aed4a9d88c5c2cb7fa4269d/Untitled%202.png)](CloudFront%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%201df6eb6a6aed4a9d88c5c2cb7fa4269d/Untitled%202.png)
+![image](https://github.com/eunhabaek/eunhabaek.github.io/assets/67853963/66f3a9dc-8da3-4055-8154-a54c486bbc8e)
 
 ### 배포 완료
-
-[![](CloudFront%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%201df6eb6a6aed4a9d88c5c2cb7fa4269d/Untitled%203.png)](CloudFront%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%201df6eb6a6aed4a9d88c5c2cb7fa4269d/Untitled%203.png)
+![image](https://github.com/eunhabaek/eunhabaek.github.io/assets/67853963/fe28edd5-07e3-4de3-9bab-108fad330a4e)
 
 배포 도메인 접속 확인
 ------------
 
-[![](CloudFront%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%201df6eb6a6aed4a9d88c5c2cb7fa4269d/Untitled%204.png)](CloudFront%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%201df6eb6a6aed4a9d88c5c2cb7fa4269d/Untitled%204.png)
+![image](https://github.com/eunhabaek/eunhabaek.github.io/assets/67853963/869a2554-b643-4802-84af-0a9d4b68b42a)
