@@ -1,5 +1,12 @@
-ECS에 FastAPI 배포
-===============
+---
+title: "ECS에 FastAPI 앱 배포"
+
+categories:
+  - AWS
+tags:
+  - Deployment
+last_modified_at: 2023-10-18
+---
 
 FastAPI Dockerfile
 ------------------
@@ -117,8 +124,8 @@ git action 속도 문제
 
 *   평균 20분 정도로 굉장히 오래 걸림
     
-    [![](ECS%E1%84%8B%E1%85%A6%20FastAPI%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%2082b59a4f3b17464a9e778e10021f386a/Untitled.png)](ECS%E1%84%8B%E1%85%A6%20FastAPI%20%E1%84%87%E1%85%A2%E1%84%91%E1%85%A9%2082b59a4f3b17464a9e778e10021f386a/Untitled.png)
-    
+    ![image](https://github.com/eunhabaek/eunhabaek.github.io/assets/67853963/ed82dec8-2577-40e7-920f-31755fbe01f8)
+
 
 캐싱 기능 추가
 --------
