@@ -1,6 +1,10 @@
+---
+title: "Git action 이용 docker hub 배포"
 
-Git action 이용 docker hub 배포
-===========================
+categories:
+  - CI/CD
+last_modified_at: 2023-08-22
+---
 
 mongodb 연동 flask web db 파싱 실습
 -----------------------------
