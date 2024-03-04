@@ -105,6 +105,14 @@ ECS에 배포 위한 git action 코드
               cluster: ${{ env.ECS_CLUSTER }}
               wait-for-service-stability: true
 
+## git action 적용 배포 속도
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2deb1555-2b80-4216-a096-7cbe3af2443d/880152c7-d44e-4ac2-be31-5ea80788e075/Untitled.png)
+
+- 편차가 큰 것을 확인할 수 있음
+- 캐싱을 추가하기
+
+
 
 캐싱 코드 추가하여 빌드/배포 속도 줄이기
 --------
